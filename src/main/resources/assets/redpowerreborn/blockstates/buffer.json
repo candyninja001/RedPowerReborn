@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"facing=down":  { "model": "redpowerreborn:buffer", "x": 90, "y": 270 },
+        "facing=up":    { "model": "redpowerreborn:buffer", "x": 270, "y": 270 },
+        "facing=north": { "model": "redpowerreborn:buffer" },
+        "facing=south": { "model": "redpowerreborn:buffer", "y": 180 },
+        "facing=west":  { "model": "redpowerreborn:buffer", "y": 270 },
+        "facing=east":  { "model": "redpowerreborn:buffer", "y": 90 }
+	}
+}

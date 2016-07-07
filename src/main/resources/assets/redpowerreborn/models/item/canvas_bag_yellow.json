@@ -1,0 +1,6 @@
+{
+    "parent": "redpowerreborn:item/canvas_bag",
+    "textures": {
+        "layer0": "redpowerreborn:items/canvas_bag_yellow"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "redpowerreborn:blocks/indigo_flower",
+        "cross": "redpowerreborn:blocks/indigo_flower"
+    }
+}

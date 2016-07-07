@@ -1,0 +1,6 @@
+{
+    "parent": "redpowerreborn:item/plan",
+    "textures": {
+        "layer0": "redpowerreborn:items/plan_written"
+    }
+}

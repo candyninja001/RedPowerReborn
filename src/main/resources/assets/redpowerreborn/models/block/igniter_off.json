@@ -1,0 +1,9 @@
+{
+	"parent": "redpowerreborn:block/omnidirectional_special_side",
+	"textures": {
+		"bottom": "redpowerreborn:blocks/deployer_back",
+        "side": "redpowerreborn:blocks/igniter_side",
+		"sidealt": "redpowerreborn:blocks/igniter_side_alternate",
+        "top": "redpowerreborn:blocks/igniter_front_off"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"parent": "redpowerreborn:block/omnidirectional_special_side",
+	"textures": {
+		"bottom": "redpowerreborn:blocks/assembler_back_off",
+        "side": "redpowerreborn:blocks/assembler_side",
+		"sidealt": "redpowerreborn:blocks/assembler_side_alternate",
+        "top": "redpowerreborn:blocks/assembler_front_off"
+	}
+}

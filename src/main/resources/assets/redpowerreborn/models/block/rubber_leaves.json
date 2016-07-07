@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "redpowerreborn:blocks/rubber_leaves"
+	}
+}

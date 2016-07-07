@@ -1,0 +1,9 @@
+tile.redpowerreborn_alloyfurnace.name=Alloy Furnace
+tile.redpowerreborn_marble.name=Marble
+
+item.redpowerreborn_plan.name=Blank Plan
+item.redpowerreborn_plan_set.name=%1$s Plan
+item.redpowerreborn_plan_set.tooltip=%1$s x %2$s
+
+container.redpowerreborn_alloyfurnace=Alloy Furnace
+container.redpowerreborn_canvasbag=Canvas Bag

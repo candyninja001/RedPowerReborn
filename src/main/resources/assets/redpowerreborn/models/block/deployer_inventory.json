@@ -1,0 +1,9 @@
+{
+	"parent": "redpowerreborn:block/omnidirectional_special_side_inventory",
+	"textures": {
+		"bottom": "redpowerreborn:blocks/deployer_back",
+        "side": "redpowerreborn:blocks/deployer_side",
+		"sidealt": "redpowerreborn:blocks/deployer_side_alternate",
+        "top": "redpowerreborn:blocks/deployer_front_off"
+	}
+}

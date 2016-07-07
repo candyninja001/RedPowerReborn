@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "redpowerreborn:blocks/buffer_back",
+        "side": "redpowerreborn:blocks/buffer_side",
+        "top": "redpowerreborn:blocks/buffer_front"
+    }
+}
