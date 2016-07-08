@@ -1,8 +1,0 @@
-{
-    "parent": "block/orientable",
-    "textures": {
-        "top": "redpowerreborn:blocks/alloy_furnace_top",
-        "front": "redpowerreborn:blocks/alloy_furnace_front_on",
-        "side": "redpowerreborn:blocks/alloy_furnace_side"
-    }
-}
