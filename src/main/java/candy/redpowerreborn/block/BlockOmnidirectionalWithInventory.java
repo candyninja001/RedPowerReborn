@@ -46,7 +46,7 @@ public class BlockOmnidirectionalWithInventory extends BlockContainer
 
     public BlockOmnidirectionalWithInventory()
     {
-        super(Material.piston);
+        super(Material.PISTON);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(ON, false));
     }
 

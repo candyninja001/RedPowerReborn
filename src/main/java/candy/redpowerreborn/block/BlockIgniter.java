@@ -46,7 +46,7 @@ public class BlockIgniter extends Block {
 	public static final PropertyBool ON = PropertyBool.create("on");
 	
 	public BlockIgniter() {
-		super(Material.piston);
+		super(Material.PISTON);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(ON, false));
 	}
 	
@@ -138,7 +138,7 @@ public class BlockIgniter extends Block {
 		            {
 		                //worldIn.playSound(playerIn, pos, SoundEvents.item_flintandsteel_use, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
 						//TODO normal redpower does not play a sound but it could be nice to add one
-		                worldIn.setBlockState(pos.offset(facing), Blocks.fire.getDefaultState(), 11);
+		                worldIn.setBlockState(pos.offset(facing), Blocks.FIRE.getDefaultState(), 11);
 		            }
 					BlockDeployer.setState(true, worldIn, pos);
 				}

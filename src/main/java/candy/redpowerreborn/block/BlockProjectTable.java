@@ -46,7 +46,7 @@ public class BlockProjectTable extends BlockContainer
 
     public BlockProjectTable()
     {
-        super(Material.rock);
+        super(Material.ROCK);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         //this.isBurning = isBurning;
     }

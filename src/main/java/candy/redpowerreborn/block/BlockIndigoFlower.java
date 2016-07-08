@@ -27,7 +27,7 @@ public class BlockIndigoFlower extends BlockBush implements net.minecraftforge.c
 	}
 	
 	protected boolean func_185514_i(IBlockState state) {
-		return state.getBlock() == Blocks.grass || state.getBlock() == Blocks.dirt || state.getBlock() == Blocks.farmland;
+		return state.getBlock() == Blocks.GRASS || state.getBlock() == Blocks.DIRT || state.getBlock() == Blocks.FARMLAND;
 	}
 	
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
@@ -37,7 +37,7 @@ public class BlockIndigoFlower extends BlockBush implements net.minecraftforge.c
 	protected void checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state) {
 		if (!this.canBlockStay(worldIn, pos, state)) {
 			this.dropBlockAsItem(worldIn, pos, state, 0);
-			worldIn.setBlockState(pos, Blocks.air.getDefaultState(), 3);
+			worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
 		}
 	}
 	

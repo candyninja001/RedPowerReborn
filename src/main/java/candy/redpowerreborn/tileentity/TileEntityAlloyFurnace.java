@@ -26,6 +26,7 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -80,14 +81,14 @@ public class TileEntityAlloyFurnace extends TileEntityLockable implements ITicka
 	 * returns them in a new stack.
 	 */
 	public ItemStack decrStackSize(int index, int count) {
-		return ItemStackHelper.func_188382_a(this.alloyFurnaceItemStacks, index, count);
+		return ItemStackHelper.getAndSplit(this.alloyFurnaceItemStacks, index, count);
 	}
 	
 	/**
 	 * Removes a stack from the given slot and returns it.
 	 */
 	public ItemStack removeStackFromSlot(int index) {
-		return ItemStackHelper.func_188383_a(this.alloyFurnaceItemStacks, index);
+		return ItemStackHelper.getAndRemove(this.alloyFurnaceItemStacks, index);
 	}
 	
 	/**
@@ -151,7 +152,8 @@ public class TileEntityAlloyFurnace extends TileEntityLockable implements ITicka
 		}
 	}
 	
-	public void writeToNBT(NBTTagCompound compound) {
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 		super.writeToNBT(compound);
 		compound.setInteger("FuelTime", this.alloyFurnaceFuelTime);
 		compound.setInteger("CookTimeCurrent", this.currentCookTime);
@@ -172,6 +174,7 @@ public class TileEntityAlloyFurnace extends TileEntityLockable implements ITicka
 		if (this.hasCustomName()) {
 			compound.setString("CustomName", this.alloyFurnaceCustomName);
 		}
+		return compound;
 	}
 	
 	/**
@@ -355,45 +358,46 @@ public class TileEntityAlloyFurnace extends TileEntityLockable implements ITicka
 	 * furnace burning, or 0 if the item isn't fuel
 	 */
 	public static int getItemBurnTime(ItemStack p_145952_0_) {
-		if (p_145952_0_ == null) {
-			return 0;
-		} else {
-			Item item = p_145952_0_.getItem();
-			
-			if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
-				Block block = Block.getBlockFromItem(item);
-				
-				if (block == Blocks.wooden_slab) {
-					return 150;
-				}
-				
-				if (block.getDefaultState().getMaterial() == Material.wood) {
-					return 300;
-				}
-				
-				if (block == Blocks.coal_block) {
-					return 16000;
-				}
-			}
-			
-			if (item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("WOOD"))
-				return 200;
-			if (item instanceof ItemSword && ((ItemSword) item).getToolMaterialName().equals("WOOD"))
-				return 200;
-			if (item instanceof ItemHoe && ((ItemHoe) item).getMaterialName().equals("WOOD"))
-				return 200;
-			if (item == Items.stick)
-				return 100;
-			if (item == Items.coal)
-				return 1600;
-			if (item == Items.lava_bucket)
-				return 20000;
-			if (item == Item.getItemFromBlock(Blocks.sapling))
-				return 100;
-			if (item == Items.blaze_rod)
-				return 2400;
-			return net.minecraftforge.fml.common.registry.GameRegistry.getFuelValue(p_145952_0_);
-		}
+		return TileEntityFurnace.getItemBurnTime(p_145952_0_);
+//		if (p_145952_0_ == null) {
+//			return 0;
+//		} else {
+//			Item item = p_145952_0_.getItem();
+//			
+//			if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
+//				Block block = Block.getBlockFromItem(item);
+//				
+//				if (block == Blocks.wooden_slab) {
+//					return 150;
+//				}
+//				
+//				if (block.getDefaultState().getMaterial() == Material.wood) {
+//					return 300;
+//				}
+//				
+//				if (block == Blocks.coal_block) {
+//					return 16000;
+//				}
+//			}
+//			
+//			if (item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("WOOD"))
+//				return 200;
+//			if (item instanceof ItemSword && ((ItemSword) item).getToolMaterialName().equals("WOOD"))
+//				return 200;
+//			if (item instanceof ItemHoe && ((ItemHoe) item).getMaterialName().equals("WOOD"))
+//				return 200;
+//			if (item == Items.stick)
+//				return 100;
+//			if (item == Items.coal)
+//				return 1600;
+//			if (item == Items.lava_bucket)
+//				return 20000;
+//			if (item == Item.getItemFromBlock(Blocks.sapling))
+//				return 100;
+//			if (item == Items.blaze_rod)
+//				return 2400;
+//			return net.minecraftforge.fml.common.registry.GameRegistry.getFuelValue(p_145952_0_);
+//		}
 	}
 	
 	public static boolean isItemFuel(ItemStack p_145954_0_) {

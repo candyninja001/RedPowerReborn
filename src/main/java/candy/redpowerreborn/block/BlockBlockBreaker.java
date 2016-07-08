@@ -45,7 +45,7 @@ public class BlockBlockBreaker extends Block {
 	public static final PropertyBool ON = PropertyBool.create("on");
 	
 	public BlockBlockBreaker() {
-		super(Material.piston);
+		super(Material.PISTON);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(ON, false));
 	}
 	

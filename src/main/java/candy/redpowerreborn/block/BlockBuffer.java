@@ -49,7 +49,7 @@ public class BlockBuffer extends BlockContainer
 
     public BlockBuffer()
     {
-        super(Material.piston);
+        super(Material.PISTON);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
     }
 

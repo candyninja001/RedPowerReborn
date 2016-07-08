@@ -50,7 +50,7 @@ public class BlockDeployer extends BlockContainer
 
     public BlockDeployer()
     {
-        super(Material.piston);
+        super(Material.PISTON);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(ON, false));
     }
 

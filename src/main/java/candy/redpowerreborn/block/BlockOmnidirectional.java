@@ -44,7 +44,7 @@ public class BlockOmnidirectional extends Block
 
     public BlockOmnidirectional()
     {
-        super(Material.piston);
+        super(Material.PISTON);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
     }
 
