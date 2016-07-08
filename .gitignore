@@ -1,6 +1,6 @@
 # exclude all
 /*
-/*.DS_Stores
+*.DS_Stores
 
 # include markdowns
 !README.md
