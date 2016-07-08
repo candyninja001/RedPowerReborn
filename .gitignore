@@ -1,6 +1,5 @@
 # exclude all
 /*
-.DS_Store
 
 # include markdowns
 !README.md
@@ -14,3 +13,6 @@
 
 # code format to reduce noise in git commits
 !codeformat/
+
+# remove any mac system files
+.DS_Store
