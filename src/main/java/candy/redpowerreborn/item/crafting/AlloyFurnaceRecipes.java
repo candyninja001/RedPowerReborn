@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import com.google.common.collect.Maps;
 
 import candy.redpowerreborn.RedPower;
+import candy.redpowerreborn.item.RedPowerItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.init.Blocks;
@@ -36,10 +37,11 @@ public class AlloyFurnaceRecipes {
     
     private AlloyFurnaceRecipes()
     {
-    	ItemStack[] input = {new ItemStack(Items.redstone, 4), new ItemStack(Items.iron_ingot, 1)};
-        this.addSmeltingRecipe(input , new ItemStack(Items.diamond), 0.7F); //TODO should be red alloy
-        //ItemStack[] input = {new ItemStack(Items.redstone, 4), new ItemStack(RedPower.itemCopperIngot, 1)};
-        //this.addSmeltingRecipe(input , new ItemStack(RedPower.itemRedAlloyIngot), 0.7F); //TODO should be red alloy
+    	ItemStack[] input = {new ItemStack(Items.REDSTONE, 4), new ItemStack(Items.IRON_INGOT, 1)};
+        this.addSmeltingRecipe(input , new ItemStack(RedPowerItems.red_alloy_ingot), 0.7F);
+        ItemStack[] input2 = {new ItemStack(Items.REDSTONE, 4), new ItemStack(RedPowerItems.copper_ingot, 1)};
+        this.addSmeltingRecipe(input2 , new ItemStack(RedPowerItems.red_alloy_ingot), 0.7F);
+        
     }
 
     /**

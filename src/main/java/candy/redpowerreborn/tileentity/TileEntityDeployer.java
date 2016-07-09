@@ -77,7 +77,7 @@ public class TileEntityDeployer extends TileEntityLockable implements ITickable,
 	 */
 	@Override
 	public ItemStack decrStackSize(int index, int count) {
-		return ItemStackHelper.func_188382_a(this.deployerItemStacks, index, count);
+		return ItemStackHelper.getAndSplit(this.deployerItemStacks, index, count);
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class TileEntityDeployer extends TileEntityLockable implements ITickable,
 	 */
 	@Override
 	public ItemStack removeStackFromSlot(int index) {
-		return ItemStackHelper.func_188383_a(this.deployerItemStacks, index);
+		return ItemStackHelper.getAndRemove(this.deployerItemStacks, index);
 	}
 	
 	/**
@@ -454,8 +454,8 @@ public class TileEntityDeployer extends TileEntityLockable implements ITickable,
 		}
 	}
 	
-	public void writeToNBT(NBTTagCompound compound) {
-		super.writeToNBT(compound);
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		compound = super.writeToNBT(compound);
 		NBTTagList nbttaglist = new NBTTagList();
 		
 		for (int i = 0; i < this.deployerItemStacks.length; ++i) {
@@ -472,6 +472,7 @@ public class TileEntityDeployer extends TileEntityLockable implements ITickable,
 		if (this.hasCustomName()) {
 			compound.setString("CustomName", this.deployerCustomName);
 		}
+		return compound;
 	}
 	
 	public BlockPos getPos(){

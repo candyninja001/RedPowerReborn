@@ -154,7 +154,7 @@ public class TileEntityAlloyFurnace extends TileEntityLockable implements ITicka
 	
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-		super.writeToNBT(compound);
+		compound = super.writeToNBT(compound);
 		compound.setInteger("FuelTime", this.alloyFurnaceFuelTime);
 		compound.setInteger("CookTimeCurrent", this.currentCookTime);
 		compound.setInteger("CookTimeTotal", this.totalCookTime);

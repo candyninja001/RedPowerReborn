@@ -76,7 +76,10 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 	/**
 	 * Returns the itemstack in the slot specified (Top left is 0, 0). Args: row, column
 	 */
+	//TODO note: this is only used when checking for crafting
+	// in redpower, crafting returns nothing if the plan stacks cannot be supplied
 	public ItemStack getStackInRowAndColumn(int row, int column) {
+		if (this.canSupplyPlan())
 		if (row >= 0 && row < this.inventoryWidth && column >= 0 && column <= this.inventoryHeight) {
 			ItemStack stack = this.getStackInSlot(row + column * this.inventoryWidth);
 			if (stack == null) {
@@ -120,12 +123,12 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 //		//return true if the supply can supply the plan slot, ignores slots with an actual item
 //	}
 	
-	public boolean[] getSupplyablityForSlots(){
-		//return true if the buffer can refill the slot after crafting
-		
+	public ItemStack[] getSupplyStacks(){
+		//return the stack if the buffer can refill the crafting grid after the 
+		// TODO ideally reducing the stacksize of these stacks reduces the actual stack size
+		ItemStacks[] planStacks = this.getCraftingStacks();
+		return false;
 	}
-	
-	public 
 	
 	/**
 	 * Get the name of this object. For players this returns their username
@@ -197,9 +200,7 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 	 * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
 	 */
 	public void setInventorySlotContents(int index, ItemStack stack) {
-		if (index == this.inventoryWidth * this.inventoryHeight)
-			this.inventory.setInventorySlotContents(this.indexPlan, stack);
-		else if (index < this.inventoryWidth * this.inventoryHeight)
+		if (index < this.craftingSize + this.bufferSize)
 			this.inventory.setInventorySlotContents(index, stack);
 		// else
 		// this.inventory.setInventorySlotContents(index, stack);

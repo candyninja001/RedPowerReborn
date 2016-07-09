@@ -277,7 +277,8 @@ public class GuiProjectTable extends GuiContainer {
 	
 	private boolean canSupply(ItemStack itemStack) {
 		for (int i = 11; i < 28; i++) {
-			if (this.supplyCheckStacks.get(i).func_185136_b(itemStack) && this.supplyCheckStacks.get(i).stackSize > 0) {
+			//TODO check nbttags maybe?s
+			if (this.supplyCheckStacks.get(i).isItemEqualIgnoreDurability(itemStack) && this.supplyCheckStacks.get(i).stackSize > 0) {
 				if (this.supplyCheckStacks.get(i).hasTagCompound() && this.supplyCheckStacks.get(i).getTagCompound().equals(itemStack.getTagCompound())) {
 					this.supplyCheckStacks.get(i).stackSize--;
 					return true;

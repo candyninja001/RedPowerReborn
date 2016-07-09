@@ -94,11 +94,12 @@ public class TileEntityAssembler extends TileEntityDeployer {
 		this.activeSlots = compound.getInteger("ActiveSlots");
 	}
 	
-	public void writeToNBT(NBTTagCompound compound) {
-		super.writeToNBT(compound);
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		compound = super.writeToNBT(compound);
 		compound.setInteger("SelectionMode", this.selectionMode);
 		compound.setInteger("SelectedSlot", this.selectedSlot);
 		compound.setInteger("ActiveSlots", this.activeSlots);
+		return compound;
 	}
 	
 	public boolean isSlotActive(int index) {
@@ -205,7 +206,7 @@ public class TileEntityAssembler extends TileEntityDeployer {
 			placer.inventory.currentItem = (i - 16) % 9;
 			stack = placer.inventory.getCurrentItem();
 			
-			if (placer.inventory.getCurrentItem() != null && placer.inventory.getCurrentItem().stackSize > 0 && placer.inventory.getCurrentItem().func_185136_b(selector)) {
+			if (placer.inventory.getCurrentItem() != null && placer.inventory.getCurrentItem().stackSize > 0 && placer.inventory.getCurrentItem().isItemEqualIgnoreDurability(selector)) {
 				
 				event = ForgeEventFactory.onPlayerBlockPlace(placer, BlockSnapshot.getBlockSnapshot(worldObj, pos.offset(facing)), EnumFacing.UP);
 				

@@ -6,7 +6,7 @@ import candy.redpowerreborn.tileentity.TileEntityProjectTable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ICrafting;
+import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.InventoryCrafting;
@@ -118,11 +118,11 @@ public class ContainerProjectTable extends Container {
 		}
 	}
 	
-	@Override
-	public void onCraftGuiOpened(ICrafting listener) {
-		super.onCraftGuiOpened(listener);
-		listener.sendAllWindowProperties(this, this.tileEntityProjectTable);
-	}
+//	@Override
+//	public void onCraftGuiOpened(ICrafting listener) {
+//		super.onCraftGuiOpened(listener);
+//		listener.sendAllWindowProperties(this, this.tileEntityProjectTable);
+//	}
 	
 	@Override
 	public void onContainerClosed(EntityPlayer playerIn) {
@@ -140,11 +140,11 @@ public class ContainerProjectTable extends Container {
 	public void detectAndSendChanges() {
 		super.detectAndSendChanges();
 		
-		for (int i = 0; i < this.crafters.size(); ++i) {
-			ICrafting icrafting = (ICrafting) this.crafters.get(i);
+		for (int i = 0; i < this.listeners.size(); ++i) {
+			IContainerListener icontainerlistener = (IContainerListener)this.listeners.get(i);
 			
 			if (this.canCraft != this.tileEntityProjectTable.getField(0)) {
-				icrafting.sendProgressBarUpdate(this, 0, this.tileEntityProjectTable.getField(0));
+				icontainerlistener.sendProgressBarUpdate(this, 0, this.tileEntityProjectTable.getField(0));
 			}
 		}
 		

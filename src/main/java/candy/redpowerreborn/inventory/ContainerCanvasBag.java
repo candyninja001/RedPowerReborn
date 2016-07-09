@@ -4,7 +4,6 @@ import candy.redpowerreborn.item.ItemCanvasBag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
@@ -127,11 +126,11 @@ public class ContainerCanvasBag extends Container {
 		return itemstack;
 	}
 	
-	@Override
-	public void onCraftGuiOpened(ICrafting listener) {
-		super.onCraftGuiOpened(listener);
-		listener.sendAllWindowProperties(this, this.inventory);
-	}
+//	@Override
+//	public void onCraftGuiOpened(ICrafting listener) {
+//		super.onCraftGuiOpened(listener);
+//		listener.sendAllWindowProperties(this, this.inventory);
+//	}
 	
 	// /**
 	// * You should override this method to prevent the player from moving the stack that

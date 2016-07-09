@@ -82,7 +82,7 @@ public class TileEntityBuffer extends TileEntityLockable implements ISidedInvent
 	 */
 	@Override
 	public ItemStack decrStackSize(int index, int count) {
-		return ItemStackHelper.func_188382_a(this.bufferItemStacks, index, count);
+		return ItemStackHelper.getAndSplit(this.bufferItemStacks, index, count);
 	}
 	
 	/**
@@ -90,7 +90,7 @@ public class TileEntityBuffer extends TileEntityLockable implements ISidedInvent
 	 */
 	@Override
 	public ItemStack removeStackFromSlot(int index) {
-		return ItemStackHelper.func_188383_a(this.bufferItemStacks, index);
+		return ItemStackHelper.getAndRemove(this.bufferItemStacks, index);
 	}
 	
 	/**
@@ -374,9 +374,9 @@ public class TileEntityBuffer extends TileEntityLockable implements ISidedInvent
 		}
 	}
 	
-	public void writeToNBT(NBTTagCompound compound) {
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 		//TODO fix inventory not saving and drops not working
-		super.writeToNBT(compound);
+		compound = super.writeToNBT(compound);
 		NBTTagList nbttaglist = new NBTTagList();
 		
 		for (int i = 0; i < this.bufferItemStacks.length; ++i) {
@@ -393,6 +393,7 @@ public class TileEntityBuffer extends TileEntityLockable implements ISidedInvent
 		if (this.hasCustomName()) {
 			compound.setString("CustomName", this.bufferCustomName);
 		}
+		return compound;
 	}
 	
 	public BlockPos getPos(){

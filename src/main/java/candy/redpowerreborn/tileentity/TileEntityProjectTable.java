@@ -70,14 +70,14 @@ public class TileEntityProjectTable extends TileEntityLockable implements ITicka
 	 * returns them in a new stack.
 	 */
 	public ItemStack decrStackSize(int index, int count) {
-		return ItemStackHelper.func_188382_a(this.projectTableItemStacks, index, count);
+		return ItemStackHelper.getAndSplit(this.projectTableItemStacks, index, count);
 	}
 	
 	/**
 	 * Removes a stack from the given slot and returns it.
 	 */
 	public ItemStack removeStackFromSlot(int index) {
-		return ItemStackHelper.func_188383_a(this.projectTableItemStacks, index);
+		return ItemStackHelper.getAndRemove(this.projectTableItemStacks, index);
 	}
 	
 	/**
@@ -137,8 +137,8 @@ public class TileEntityProjectTable extends TileEntityLockable implements ITicka
 		}
 	}
 	
-	public void writeToNBT(NBTTagCompound compound) {
-		super.writeToNBT(compound);
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		compound = super.writeToNBT(compound);
 		NBTTagList nbttaglist = new NBTTagList();
 		
 		for (int i = 0; i < this.projectTableItemStacks.length; ++i) {
@@ -155,6 +155,7 @@ public class TileEntityProjectTable extends TileEntityLockable implements ITicka
 		if (this.hasCustomName()) {
 			compound.setString("CustomName", this.projectTableCustomName);
 		}
+		return compound;
 	}
 	
 	/**

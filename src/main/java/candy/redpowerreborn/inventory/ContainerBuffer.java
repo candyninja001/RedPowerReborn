@@ -4,7 +4,6 @@ import candy.redpowerreborn.tileentity.TileEntityBuffer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -46,11 +45,11 @@ public class ContainerBuffer extends Container {
 		}
 	}
 
-	@Override
-	public void onCraftGuiOpened(ICrafting listener) {
-		super.onCraftGuiOpened(listener);
-		listener.sendAllWindowProperties(this, this.tileEntityBuffer);
-	}
+//	@Override
+//	public void onCraftGuiOpened(ICrafting listener) {
+//		super.onCraftGuiOpened(listener);
+//		listener.sendAllWindowProperties(this, this.tileEntityBuffer);
+//	}
 
 	// code for shift-clicking items into the inventory
 	@Override

@@ -4,7 +4,7 @@ import candy.redpowerreborn.tileentity.TileEntityAssembler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ICrafting;
+import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -55,11 +55,11 @@ public class ContainerAssembler extends Container {
 		}
 	}
 
-	@Override
-	public void onCraftGuiOpened(ICrafting listener) {
-		super.onCraftGuiOpened(listener);
-		listener.sendAllWindowProperties(this, this.tileEntityAssembler);
-	}
+//	@Override
+//	public void onCraftGuiOpened(icontainerlistener listener) {
+//		super.onCraftGuiOpened(listener);
+//		listener.sendAllWindowProperties(this, this.tileEntityAssembler);
+//	}
 
 	/**
 	 * Looks for changes made in the container, sends them to every listener.
@@ -68,19 +68,19 @@ public class ContainerAssembler extends Container {
 	public void detectAndSendChanges() {
 		super.detectAndSendChanges();
 
-		for (int i = 0; i < this.crafters.size(); ++i) {
-			ICrafting icrafting = (ICrafting) this.crafters.get(i);
+		for (int i = 0; i < this.listeners.size(); ++i) {
+			IContainerListener icontainerlistener = (IContainerListener)this.listeners.get(i);
 
 			if (this.selectionMode != this.tileEntityAssembler.getField(0)) {
-				icrafting.sendProgressBarUpdate(this, 0, this.tileEntityAssembler.getField(0));
+				icontainerlistener.sendProgressBarUpdate(this, 0, this.tileEntityAssembler.getField(0));
 			}
 
 			if (this.selectedSlot != this.tileEntityAssembler.getField(1)) {
-				icrafting.sendProgressBarUpdate(this, 1, this.tileEntityAssembler.getField(1));
+				icontainerlistener.sendProgressBarUpdate(this, 1, this.tileEntityAssembler.getField(1));
 			}
 			
 			if (this.activeSlots != this.tileEntityAssembler.getField(2)) {
-				icrafting.sendProgressBarUpdate(this, 2, this.tileEntityAssembler.getField(2));
+				icontainerlistener.sendProgressBarUpdate(this, 2, this.tileEntityAssembler.getField(2));
 			}
 		}
 
