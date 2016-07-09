@@ -108,9 +108,9 @@ public class GuiProjectTable extends GuiContainer {
 	 */
 	
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-		super.drawScreen(mouseX, mouseY, partialTicks);
 		// this.drawDefaultBackground();
-		ItemStack[] stacks = ItemPlan.getCraftingStacks(this.inventorySlots.inventorySlots.get(9).getStack());
+		ItemStack[] stacks = ItemPlan.getCraftingStacks(this.inventorySlots.inventorySlots.get(10).getStack());
+		int[] indexes = ((ContainerProjectTable)this.inventorySlots).craftMatrix.getSupplyIndexes();
 		if (stacks != null && stacks.length == 9) {
 			int i = this.guiLeft;
 			int j = this.guiTop;
@@ -131,13 +131,15 @@ public class GuiProjectTable extends GuiContainer {
 			OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) k, (float) l);
 			GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 			
-			this.resetSupplyCheck();
+			//this.resetSupplyCheck();
 			for (int i1 = 0; i1 < 9; ++i1) {
-				Slot slot = (Slot) this.inventorySlots.inventorySlots.get(i1);
+				Slot slot = (Slot) this.inventorySlots.inventorySlots.get(i1 + 1);
 				if (!slot.getHasStack() && stacks[i1] != null) {
 					this.renderGhost(slot, stacks[i1], i1);
 					
-					if (!this.canSupply(stacks[i1])) {
+					// TODO this is the part the draws the white or red overlay on plan stacks depending on the buffer
+					// TODO currently it is only highlighting the visible block, not the entire slot, but the functionality is working
+					if (indexes[i1] != i1) {
 						// this.theSlot = slot;
 						GlStateManager.disableLighting();
 						GlStateManager.disableDepth();
@@ -148,11 +150,21 @@ public class GuiProjectTable extends GuiContainer {
 						GlStateManager.colorMask(true, true, true, true);
 						GlStateManager.enableLighting();
 						GlStateManager.enableDepth();
+					}else{
+						GlStateManager.disableLighting();
+						GlStateManager.disableDepth();
+						int j1 = slot.xDisplayPosition;
+						int k1 = slot.yDisplayPosition;
+						GlStateManager.colorMask(true, false, false, false);
+						this.drawGradientRect(j1, k1, j1 + 16, k1 + 16, -2130706433, -2130706433); //TODO find the right color values
+						GlStateManager.colorMask(true, true, true, true);
+						GlStateManager.enableLighting();
+						GlStateManager.enableDepth();
 					}
 				}
 			}
 			
-			RenderHelper.disableStandardItemLighting();
+			// RenderHelper.disableStandardItemLighting();
 			// this.drawGuiContainerForegroundLayer(mouseX, mouseY);
 			// RenderHelper.enableGUIStandardItemLighting();
 			// InventoryPlayer inventoryplayer = this.mc.thePlayer.inventory;
@@ -200,7 +212,7 @@ public class GuiProjectTable extends GuiContainer {
 			// this.drawItemStack(this.returningStack, l1, i2, (String)null);
 			// }
 			//
-			// GlStateManager.popMatrix();
+			GlStateManager.popMatrix();
 			//
 			// if (inventoryplayer.getItemStack() == null && this.theSlot != null && this.theSlot.getHasStack())
 			// {
@@ -208,10 +220,11 @@ public class GuiProjectTable extends GuiContainer {
 			// this.renderToolTip(itemstack1, mouseX, mouseY);
 			// }
 			//
-			// GlStateManager.enableLighting();
-			// GlStateManager.enableDepth();
-			// RenderHelper.enableStandardItemLighting();
+//			 GlStateManager.enableLighting();
+//			 GlStateManager.enableDepth();
+//			 RenderHelper.enableStandardItemLighting();
 		}
+		super.drawScreen(mouseX, mouseY, partialTicks);
 	}
 	
 	private void renderGhost(Slot slotIn, ItemStack stack, int i1) {
@@ -253,8 +266,12 @@ public class GuiProjectTable extends GuiContainer {
 		// }
 		// }
 		
+		//original
 		this.zLevel = 100.0F;
 		this.itemRender.zLevel = 100.0F;
+//		this.zLevel = -100.0F;
+//		this.itemRender.zLevel = -100.0F;
+		// I have no idea what I'm doing but it looks good
 		
 		GlStateManager.enableDepth();
 		this.itemRender.renderItemAndEffectIntoGUI(this.mc.thePlayer, stack, i, j);
@@ -275,27 +292,27 @@ public class GuiProjectTable extends GuiContainer {
 		this.zLevel = 0.0F;
 	}
 	
-	private boolean canSupply(ItemStack itemStack) {
-		for (int i = 11; i < 28; i++) {
-			//TODO check nbttags maybe?s
-			if (this.supplyCheckStacks.get(i).isItemEqualIgnoreDurability(itemStack) && this.supplyCheckStacks.get(i).stackSize > 0) {
-				if (this.supplyCheckStacks.get(i).hasTagCompound() && this.supplyCheckStacks.get(i).getTagCompound().equals(itemStack.getTagCompound())) {
-					this.supplyCheckStacks.get(i).stackSize--;
-					return true;
-				} else if (!this.supplyCheckStacks.get(i).hasTagCompound()) {
-					this.supplyCheckStacks.get(i).stackSize--;
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	private void resetSupplyCheck() {
-		this.supplyCheckStacks = new ArrayList<ItemStack>();
-		for (Slot slot : this.inventorySlots.inventorySlots)
-			this.supplyCheckStacks.add(slot.getStack().copy());
-	}
+//	private boolean canSupply(ItemStack itemStack) {
+//		for (int i = 11; i < 28; i++) {
+//			//TODO check nbttags maybe?s
+//			if (this.supplyCheckStacks.get(i).isItemEqualIgnoreDurability(itemStack) && this.supplyCheckStacks.get(i).stackSize > 0) {
+//				if (this.supplyCheckStacks.get(i).hasTagCompound() && this.supplyCheckStacks.get(i).getTagCompound().equals(itemStack.getTagCompound())) {
+//					this.supplyCheckStacks.get(i).stackSize--;
+//					return true;
+//				} else if (!this.supplyCheckStacks.get(i).hasTagCompound()) {
+//					this.supplyCheckStacks.get(i).stackSize--;
+//					return true;
+//				}
+//			}
+//		}
+//		return false;
+//	}
+//	
+//	private void resetSupplyCheck() {
+//		this.supplyCheckStacks = new ArrayList<ItemStack>();
+//		for (Slot slot : this.inventorySlots.inventorySlots)
+//			this.supplyCheckStacks.add(slot.getStack().copy());
+//	}
 	
 	// /**
 	// * Draws the given slot: any item in it, the slot's background, the hovered highlight, etc.

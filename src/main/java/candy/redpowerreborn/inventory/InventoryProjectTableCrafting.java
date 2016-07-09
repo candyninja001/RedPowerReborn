@@ -48,13 +48,19 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 	 * Returns the number of slots in the inventory.
 	 */
 	public int getSizeInventory() {
-		return this.inventorySize;
+		//TODO I believe this is only called when searching for stacks to remove when crafting, returning 9 as a test
+		return this.craftingSize;
+		//return this.inventorySize;
 	}
 	
 	/**
 	 * Returns the stack in the given slot.
 	 */
 	public ItemStack getStackInSlot(int index) {
+		// this was test code, not useful any more
+//		if(index < this.craftingSize)
+//			if(this.inventory.getStackInSlot(index) == null)
+//				return this.getStackInPlan(index);
 		if (index < this.inventorySize)
 			return this.inventory.getStackInSlot(index);
 		// if (index == 2 * this.inventoryWidth * this.inventoryHeight + 1)
@@ -77,28 +83,84 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 	 * Returns the itemstack in the slot specified (Top left is 0, 0). Args: row, column
 	 */
 	//TODO note: this is only used when checking for crafting
-	// in redpower, crafting returns nothing if the plan stacks cannot be supplied
+	// in redpower, crafting returns nothing if the plan stacks cannot be fully supplied
 	public ItemStack getStackInRowAndColumn(int row, int column) {
-		if (this.canSupplyPlan())
+		if (!this.canSupplyPlan())
+			return null;
 		if (row >= 0 && row < this.inventoryWidth && column >= 0 && column <= this.inventoryHeight) {
 			ItemStack stack = this.getStackInSlot(row + column * this.inventoryWidth);
 			if (stack == null) {
-				return null;
+				//return null;
 				// TODO if can supply plan then return plan stack
-				//return this.getStackInPlan(row + column * this.inventoryWidth);
+				return this.getStackInPlan(row + column * this.inventoryWidth);
 			}
 			return stack;
 		}
 		return null;
 	}
 	
+	private ItemStack getStackInPlan(int index) {
+		ItemStack[] stacksPlan = this.getStacksInPlan();
+		if(stacksPlan !=null)
+			return stacksPlan[index];
+		return null;
+				//TODO perform check and return the next valid stack from this.getSupplyStacks()
+//				if(stacksPlan[i]!=null){
+//					canSupply = false;
+//					scan: for(int k = 0; k < this.bufferSize; k++){
+//						if(stacksBuffer[k] != null && stacksBuffer[k].stackSize > 0){
+//							if(stacksPlan[i].isItemEqualIgnoreDurability(stacksBuffer[k])){
+//								stacksBuffer[k].stackSize--;
+//								canSupply = true;
+//								break scan;
+//							}
+//						}
+//					}
+//					if(!canSupply)
+//						return false;
+//				}
+	}
+
+	public boolean canSupplyPlan(){
+		ItemStack[] stacksPlan = this.getStacksInPlan();
+		ItemStack[] stacksCrafting = this.getCraftingStacks();
+		ItemStack[] stacksBuffer = this.getBufferStacksCopy();
+		if(stacksPlan == null)
+			return true;
+		if(stacksPlan.length != stacksCrafting.length)
+			return false;//TODO just a small check, probably not needed.
+		boolean flag = true;
+		boolean canSupply = false;
+		for (int i = 0; i < 9; i++){
+			if(stacksCrafting[i]==null){
+				if(stacksPlan[i]!=null){
+					canSupply = false;
+					scan: for(int k = 0; k < this.bufferSize; k++){
+						if(stacksBuffer[k] != null && stacksBuffer[k].stackSize > 0){
+							if(stacksPlan[i].isItemEqualIgnoreDurability(stacksBuffer[k])){
+								stacksBuffer[k].stackSize--;
+								canSupply = true;
+								break scan;
+							}
+						}
+					}
+					if(!canSupply)
+						return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	
+	
 	// TODO needs changing if the grafting grid ever changes to be over 3 x 3
-	public ItemStack getStackInPlan(int index) {
-		ItemStack plan = this.getStackInSlot(this.inventorySize);
+	public ItemStack[] getStacksInPlan() {
+		ItemStack plan = this.getStackInSlot(this.inventorySize-1);
 		if (plan != null) {
 			ItemStack[] stacks = ItemPlan.getCraftingStacks(plan);
 			if (stacks != null) {
-				return stacks[index];
+				return stacks;
 			}
 		}
 		return null;
@@ -123,11 +185,91 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 //		//return true if the supply can supply the plan slot, ignores slots with an actual item
 //	}
 	
+	/**
+	 * this returns the 9 stacks that will have items removed, can return the same stack in more than one index
+	 */
+	
 	public ItemStack[] getSupplyStacks(){
+		ItemStack[] stacksPlan = this.getStacksInPlan();
+		ItemStack[] stacksCrafting = this.getCraftingStacks();
+		ItemStack[] stacksBuffer = this.getBufferStacks();
+		ItemStack[] stacksBufferCopy = this.getBufferStacksCopy();
+		ItemStack[] stacksSupply = this.getCraftingStacks();
+		boolean flag = true;
+		boolean canSupply = false;
+		for (int i = 0; i < 9; i++){
+			if(stacksCrafting[i]==null){
+				if(stacksPlan != null && stacksPlan[i]!=null){
+					scan: for(int k = 0; k < this.bufferSize; k++){
+						if(stacksBuffer[k] != null && stacksBufferCopy[k].stackSize > 0){
+							if(stacksPlan[i].isItemEqualIgnoreDurability(stacksBuffer[k])){
+								stacksBufferCopy[k].stackSize--;
+								stacksSupply[i] = stacksBuffer[k];
+								break scan;
+							}
+						}
+					}
+				}
+			}
+		}
+		return stacksSupply;
+	}
+	
+	public int[] getSupplyIndexes(){
+		ItemStack[] stacksPlan = this.getStacksInPlan();
+		ItemStack[] stacksCrafting = this.getCraftingStacks();
+		ItemStack[] stacksBuffer = this.getBufferStacks();
+		ItemStack[] stacksBufferCopy = this.getBufferStacksCopy();
+		int[] indexesSupply = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+		boolean flag = true;
+		boolean canSupply = false;
+		for (int i = 0; i < 9; i++){
+			if(stacksCrafting[i]==null){
+				if(stacksPlan != null && stacksPlan[i]!=null){
+					scan: for(int k = 0; k < this.bufferSize; k++){
+						if(stacksBuffer[k] != null && stacksBufferCopy[k].stackSize > 0){
+							if(stacksPlan[i].isItemEqualIgnoreDurability(stacksBuffer[k])){
+								stacksBufferCopy[k].stackSize--;
+								indexesSupply[i] = k + this.craftingSize;
+								break scan;
+							}
+						}
+					}
+				}
+			}else{
+				if(stacksCrafting[i].stackSize==1){
+					scan: for(int k = 0; k < this.bufferSize; k++){
+						if(stacksBuffer[k] != null && stacksBufferCopy[k].stackSize > 0){
+							if(stacksCrafting[i].isItemEqualIgnoreDurability(stacksBuffer[k])){
+								stacksBufferCopy[k].stackSize--;
+								indexesSupply[i] = k + this.craftingSize;
+								break scan;
+							}
+						}
+					}
+				}
+			}
+		}
+		return indexesSupply;
+	}
+	
+	public ItemStack[] getBufferStacks(){
 		//return the stack if the buffer can refill the crafting grid after the 
-		// TODO ideally reducing the stacksize of these stacks reduces the actual stack size
-		ItemStacks[] planStacks = this.getCraftingStacks();
-		return false;
+		// TODO ideally reducing the stacksize of these stacks reduces the actual stack size\
+		ItemStack[] stacksBuffer = new ItemStack[this.bufferSize];
+		for(int i = 0; i < this.bufferSize; i++)
+			stacksBuffer[i] = this.getStackInSlot(i + this.craftingSize);
+		return stacksBuffer;
+	}
+	
+	public ItemStack[] getBufferStacksCopy(){
+		//return the stack if the buffer can refill the crafting grid after the 
+		// TODO ideally reducing the stacksize of these stacks reduces the actual stack size\
+		ItemStack[] stacksPlan = new ItemStack[this.bufferSize];
+		for(int i = 0; i < this.bufferSize; i++)
+			if(this.getStackInSlot(i + this.craftingSize)!=null)
+				stacksPlan[i] = this.getStackInSlot(i + this.craftingSize).copy();
+		return stacksPlan;
 	}
 	
 	/**
@@ -200,7 +342,7 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 	 * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
 	 */
 	public void setInventorySlotContents(int index, ItemStack stack) {
-		if (index < this.craftingSize + this.bufferSize)
+		if (index < this.inventorySize)
 			this.inventory.setInventorySlotContents(index, stack);
 		// else
 		// this.inventory.setInventorySlotContents(index, stack);
@@ -265,12 +407,12 @@ public class InventoryProjectTableCrafting extends InventoryCrafting implements 
 	}
 	
 	public boolean canPlan() {// TODO Can make this require worldObj instead of as a variable
-		return this.getStackInSlot(this.inventoryWidth * this.inventoryHeight) != null && this.getStackInSlot(this.inventoryWidth * this.inventoryHeight).getItem() instanceof ItemPlan && this.getStackInSlot(this.inventoryWidth * this.inventoryHeight).stackSize == 1 && !ItemPlan.isSet(this.getStackInSlot(this.inventoryWidth * this.inventoryHeight)) && CraftingManager.getInstance().findMatchingRecipe(this, this.worldObj) != null;
+		return this.getStackInSlot(this.inventorySize-1) != null && this.getStackInSlot(this.inventorySize-1).getItem() instanceof ItemPlan && this.getStackInSlot(this.inventorySize-1).stackSize == 1 && !ItemPlan.isSet(this.getStackInSlot(this.inventorySize-1)) && CraftingManager.getInstance().findMatchingRecipe(this, this.worldObj) != null;
 	}
 	
 	public void recordPlan() {
 		if (canPlan())
-			ItemPlan.writeToNBT(this.getStackInSlot(this.inventoryWidth * this.inventoryHeight), this.getCraftingStacks(), CraftingManager.getInstance().findMatchingRecipe(this, this.worldObj));// TODO fix
+			ItemPlan.writeToNBT(this.getStackInSlot(this.inventorySize-1), this.getCraftingStacks(), CraftingManager.getInstance().findMatchingRecipe(this, this.worldObj));// TODO fix
 	}
 	
 	private ItemStack[] getCraftingStacks() {

@@ -31,15 +31,15 @@ public class ContainerProjectTable extends Container {
 	public ContainerProjectTable(InventoryPlayer inventoryPlayer, TileEntityProjectTable te) {
 		this.worldObj = inventoryPlayer.player.worldObj;
 		tileEntityProjectTable = te;
-		craftMatrix = new InventoryProjectTableCrafting(this, tileEntityProjectTable, 3, 3, this.worldObj, 27);
+		craftMatrix = new InventoryProjectTableCrafting(this, tileEntityProjectTable, 3, 3, this.worldObj, 18);
 		
-		ItemStack[] stacks = ((TileEntityProjectTable) tileEntityProjectTable).getCraftingStacks();
-		int k = 0;
-		while (k < 9) {
-			this.craftMatrix.setInventorySlotContents(k, stacks[k]);
-			k++;
-		}
-		this.craftMatrix.setInventorySlotContents(9, this.tileEntityProjectTable.getStackInSlot(27));
+//		ItemStack[] stacks = ((TileEntityProjectTable) tileEntityProjectTable).getCraftingStacks();
+//		int k = 0;
+//		while (k < 9) {
+//			this.craftMatrix.setInventorySlotContents(k, stacks[k]);
+//			k++;
+//		}
+//		this.craftMatrix.setInventorySlotContents(9, this.tileEntityProjectTable.getStackInSlot(27));
 		
 //		//Crafting result
 //		this.addSlotToContainer(new Slot(this.craftMatrix, 19, 143, 36){
@@ -51,21 +51,13 @@ public class ContainerProjectTable extends Container {
 //				return false;
 //			}
 //		});
-		this.addSlotToContainer(new SlotCrafting(inventoryPlayer.player, this.craftMatrix, this.craftResult, 0, 143, 36));
+		// must use custom slot to override the defualt check for crafting slots, otherwise the crafting items would not remove stacks from the buffer.
+		this.addSlotToContainer(new SlotProjectTableCrafting(inventoryPlayer.player, this.craftMatrix, this.craftResult, 0, 143, 36));
 		
 		//Crafting grid
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < 3; ++j) {
-				this.addSlotToContainer(new Slot(this.craftMatrix, 10 + j + i * 3, 48 + j * 18, 18 + i * 18){
-					public boolean canBeHovered() {
-						return false;
-					}
-					
-					public boolean canTakeStack(EntityPlayer playerIn){
-						return false;
-					}
-				});
-				this.addSlotToContainer(new Slot(this.craftMatrix, j + i * 3, 48 + j * 18, 18 + i * 18));
+				this.addSlotToContainer(new SlotProjectTableCraftingGrid(this, this.craftMatrix, j + i * 3, 48 + j * 18, 18 + i * 18));
 			}
 		}
 		
@@ -83,7 +75,7 @@ public class ContainerProjectTable extends Container {
 		//Buffer
 		for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < 9; j++) {
-				addSlotToContainer(new Slot(this.craftMatrix, 9 + j + i * 9, 8 + j * 18, 90 + i * 18));
+				addSlotToContainer(new SlotProjectTableCraftingGrid(this, this.craftMatrix, 9 + j + i * 9, 8 + j * 18, 90 + i * 18));
 			}
 		}
 		
@@ -169,14 +161,14 @@ public class ContainerProjectTable extends Container {
 			stack = stackInSlot.copy();
 			
 			// merges the item into player inventory since its in the tileEntity
-			if (slot < 39) {
-				if (!this.mergeItemStack(stackInSlot, 39, 75, true)) {
+			if (slot < 29) {
+				if (!this.mergeItemStack(stackInSlot, 29, 65, true)) {
 					return null;
 				}
 			}
 			// places it into the tileEntity is possible since its in the player
 			// inventory
-			else if (!this.mergeItemStack(stackInSlot, 21, 39, false)) {
+			else if (!this.mergeItemStack(stackInSlot, 11, 29, false)) {
 				return null;
 			}
 			
