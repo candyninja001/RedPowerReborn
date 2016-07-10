@@ -156,15 +156,15 @@ public class RedPowerItems {
 		GameRegistry.registerItem(emerald_shovel, "emerald_shovel");
 		emerald_sickle = new Item().setUnlocalizedName(RedPower.MODID + "_sickleEmerald").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(emerald_sickle, "emerald_sickle");
-		emerald_sword = new Item().setUnlocalizedName(RedPower.MODID + "_sword.emerald").setCreativeTab(RedPower.tabRedPower);
+		emerald_sword = new Item().setUnlocalizedName(RedPower.MODID + "_swordEmerald").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(emerald_sword, "emerald_sword");
-		flax_seed = new Item().setUnlocalizedName(RedPower.MODID + "_seedflax").setCreativeTab(RedPower.tabRedPower);
+		flax_seed = new Item().setUnlocalizedName(RedPower.MODID + "_seedFlax").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(flax_seed, "flax_seed");
 		gold_sickle = new Item().setUnlocalizedName(RedPower.MODID + "_sickleGold").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(gold_sickle, "gold_sickle");
 		indigo_dye = new Item().setUnlocalizedName(RedPower.MODID + "_dye.indigo").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(indigo_dye, "indigo_dye");
-		iron_handsaw = new Item().setUnlocalizedName(RedPower.MODID + "_handsaw.iron").setCreativeTab(RedPower.tabRedPower);
+		iron_handsaw = new Item().setUnlocalizedName(RedPower.MODID + "_handsawIron").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(iron_handsaw, "iron_handsaw");
 		iron_nugget = new Item().setUnlocalizedName(RedPower.MODID + "_nuggetIron").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(iron_nugget, "iron_nugget");

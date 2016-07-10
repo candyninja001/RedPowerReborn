@@ -133,14 +133,14 @@ public class RedPowerBlocks {
 		GameRegistry.registerBlock(igniter, "igniter");
 		indigo_flower = new BlockIndigoFlower().setUnlocalizedName(RedPower.MODID + "_flower.indigo").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(indigo_flower, "indigo_flower");
-		item_detector = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_blockDetector").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerBlock(item_detector, "block_detector");
+		item_detector = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_itemDetector").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerBlock(item_detector, "item_detector");
 		kinetic_generator = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_kineticGenerator").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(kinetic_generator, "kinetic_generator");
 		magtube = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_magtube").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(magtube, "magtube");
-		manager = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_mannager").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerBlock(manager, "mannager");
+		manager = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_manager").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerBlock(manager, "manager");
 		marble = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_marble").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(marble, "marble");
 		marble_brick = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_marble.brick").setCreativeTab(RedPower.tabRedPower);
