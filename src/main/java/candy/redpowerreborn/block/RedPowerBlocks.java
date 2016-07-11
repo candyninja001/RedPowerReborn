@@ -195,7 +195,7 @@ public class RedPowerBlocks {
 		GameRegistry.registerBlock(tin_block, "tin_block");
 		tin_ore = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_oreTin").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(tin_ore, "tin_ore");
-		transposer = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_transposer").setCreativeTab(RedPower.tabRedPower);
+		transposer = new BlockTransposer().setUnlocalizedName(RedPower.MODID + "_transposer").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(transposer, "transposer");
 		tungsten_ore = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_oreTungsten").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(tungsten_ore, "tungsten_ore");
