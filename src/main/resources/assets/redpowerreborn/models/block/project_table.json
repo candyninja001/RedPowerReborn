@@ -1,6 +1,9 @@
 {
-	"parent": "block/cube_all",
+	"parent": "redpowerreborn:block/orientable_special”,
 	"textures": {
-		"all": "redpowerreborn:blocks/project_table"
+		“top”: "redpowerreborn:blocks/project_table_top”,
+        	"side": "redpowerreborn:blocks/project_table_side",
+		“bottom”: "redpowerreborn:blocks/project_table_bottom”,
+        	“front”: "redpowerreborn:blocks/project_table_front”
 	}
 }

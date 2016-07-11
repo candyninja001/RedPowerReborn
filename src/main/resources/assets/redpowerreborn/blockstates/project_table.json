@@ -1,5 +1,8 @@
 {
-	"variants": {
-		"normal": { "model": "redpowerreborn:project_table" }
-	}
+    "variants": {
+        "facing=north": { "model": "redpowerreborn:marble” },
+        "facing=south": { "model": "redpowerreborn:marble", "y": 180 },
+        "facing=west":  { "model": "redpowerreborn:alloy_furnace_off", "y": 270 },
+        "facing=east":  { "model": "redpowerreborn:alloy_furnace_off", "y": 90 }
+    }
 }
