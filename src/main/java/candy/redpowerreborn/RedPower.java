@@ -13,6 +13,7 @@ import candy.redpowerreborn.tileentity.TileEntityAssembler;
 import candy.redpowerreborn.tileentity.TileEntityBuffer;
 import candy.redpowerreborn.tileentity.TileEntityDeployer;
 import candy.redpowerreborn.tileentity.TileEntityProjectTable;
+import candy.redpowerreborn.world.RedPowerBiomeDecorationHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.material.Material;
@@ -22,12 +23,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
-
 import net.minecraftforge.fml.common.SidedProxy;
-
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -79,6 +79,7 @@ public class RedPower {
 		RedPowerItems.init(event);
 		RedPowerCrafting.init(event);
 		RedPowerOreDictionary.init(event);
+		MinecraftForge.TERRAIN_GEN_BUS.register(new RedPowerBiomeDecorationHandler());
 	}
 	
 	@EventHandler

@@ -2,6 +2,8 @@ package candy.redpowerreborn.block;
 
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.MapColor;
@@ -18,7 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockIndigoFlower extends BlockBush implements net.minecraftforge.common.IPlantable {
+public class BlockIndigoFlower extends BlockBush {
 	protected static final AxisAlignedBB field_185515_b = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.699999988079071D, 0.6000000238418579D, 0.699999988079071D);
 	
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
@@ -50,13 +52,17 @@ public class BlockIndigoFlower extends BlockBush implements net.minecraftforge.c
 		return this.func_185514_i(worldIn.getBlockState(pos.down()));
 	}
 	
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return field_185515_b;
-	}
-	
-	public AxisAlignedBB getSelectedBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
-		return NULL_AABB;
-	}
+//	@Override
+//	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+//		return field_185515_b;
+//	}
+//	
+//	@Nullable
+//	public AxisAlignedBB getSelectedBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+//		//return field_185515_b;
+//		return NULL_AABB;
+//		//flower returns null
+//	}
 	
 	/**
 	 * Used to determine ambient occlusion and culling when rebuilding chunks for render
@@ -69,19 +75,6 @@ public class BlockIndigoFlower extends BlockBush implements net.minecraftforge.c
 		return false;
 	}
 	
-	@Override
-	public net.minecraftforge.common.EnumPlantType getPlantType(net.minecraft.world.IBlockAccess world, BlockPos pos) {
-		return net.minecraftforge.common.EnumPlantType.Plains;
-	}
-	
-	@Override
-	public IBlockState getPlant(net.minecraft.world.IBlockAccess world, BlockPos pos) {
-		IBlockState state = world.getBlockState(pos);
-		if (state.getBlock() != this)
-			return getDefaultState();
-		return state;
-	}
-	
 	@SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.CUTOUT;
@@ -90,4 +83,10 @@ public class BlockIndigoFlower extends BlockBush implements net.minecraftforge.c
 	public EnumBlockRenderType getRenderType(IBlockState state) {
 		return EnumBlockRenderType.MODEL;
 	}
+	
+	@SideOnly(Side.CLIENT)
+    public Block.EnumOffsetType getOffsetType()
+    {
+        return Block.EnumOffsetType.XZ;
+    }
 }
