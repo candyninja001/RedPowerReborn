@@ -38,11 +38,11 @@ public class BlockFlax extends BlockCrops {
 					BlockDoublePlant.EnumBlockHalf.class);
 
 	protected Item getSeed() {
-		return RedPowerItems.flax_seed;
+		return RedPowerItems.FLAX_SEED;
 	}
 
 	protected Item getCrop() {
-		return RedPowerItems.flax_seed;
+		return Items.STRING;
 	}
 
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source,

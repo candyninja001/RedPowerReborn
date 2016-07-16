@@ -39,7 +39,7 @@ public class AlloyFurnaceRecipes {
     {
     	ItemStack[] input = {new ItemStack(Items.REDSTONE, 4), new ItemStack(Items.IRON_INGOT, 1)};
         this.addSmeltingRecipe(input , new ItemStack(RedPowerItems.red_alloy_ingot), 0.7F);
-        ItemStack[] input2 = {new ItemStack(Items.REDSTONE, 4), new ItemStack(RedPowerItems.copper_ingot, 1)};
+        ItemStack[] input2 = {new ItemStack(Items.REDSTONE, 4), new ItemStack(RedPowerItems.COPPER_INGOT, 1)};
         this.addSmeltingRecipe(input2 , new ItemStack(RedPowerItems.red_alloy_ingot), 0.7F);
         
     }

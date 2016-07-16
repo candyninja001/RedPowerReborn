@@ -24,10 +24,10 @@ public class RedPowerCrafting {
 		//TODO add alloy furnace recipes 
 		
 		// canvas bag recipes Ends at line 77
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(RedPowerItems.indigo_dye, 2), new Object[] { RedPowerBlocks.indigo_flower }));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(RedPowerItems.plan, new Object[] { RedPowerItems.indigo_dye, Items.PAPER }));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(RedPowerItems.INDIGO_DYE, 2), new Object[] { RedPowerBlocks.indigo_flower }));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(RedPowerItems.plan, new Object[] { RedPowerItems.INDIGO_DYE, Items.PAPER }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerItems.canvas, true, new Object[] { "sss", "sSs", "sss", 's', "string", 'S', "stickWood" }));
-		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerItems.canvas_bag, true, new Object[] { "ccc", "c c", "ccc", 'c', RedPowerItems.canvas }));
+		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerItems.CANVAS_BAG, true, new Object[] { "ccc", "c c", "ccc", 'c', RedPowerItems.canvas }));
 		NBTTagCompound tag;
 		NBTTagCompound tag2;
 		ItemStack stack;
@@ -35,12 +35,12 @@ public class RedPowerCrafting {
 		for (int i = 0; i < 16; i++) {
 			tag = new NBTTagCompound();
 			tag.setInteger("Color", i);
-			stack = new ItemStack(RedPowerItems.canvas_bag);
+			stack = new ItemStack(RedPowerItems.CANVAS_BAG);
 			stack.setTagCompound(tag);
 			if (i != 0)
 				GameRegistry.addRecipe(new ShapedOreRecipe(stack, true, new Object[] { "ccc", "cdc", "ccc", 'c', RedPowerItems.canvas, 'd', ColorHelper.getOreDictNameFromEnumDyeColor(EnumDyeColor.byMetadata(i)) }));
 		}
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(RedPowerItems.canvas_bag), new Object[] { RedPowerItems.canvas_bag, "dye" }){
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(RedPowerItems.CANVAS_BAG), new Object[] { RedPowerItems.CANVAS_BAG, "dye" }){
 			@Override
 		    public ItemStack getCraftingResult(InventoryCrafting var1){
 		    	//return output.copy(); 
@@ -82,7 +82,7 @@ public class RedPowerCrafting {
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.STICK, 8), new ItemStack(RedPowerBlocks.rubber_log));
 		GameRegistry.addSmelting(new ItemStack(RedPowerBlocks.rubber_log), new ItemStack(Items.COAL), 0.15F);
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.indigo_dye, 2), new ItemStack(RedPowerBlocks.indigo_flower));
+		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.INDIGO_DYE, 2), new ItemStack(RedPowerBlocks.indigo_flower));
 		
 		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.marble_brick, 4), "mm", "mm", 'm', new ItemStack(RedPowerBlocks.marble));
 		
@@ -94,8 +94,8 @@ public class RedPowerCrafting {
 		
 		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.ruby_block), new Object[] { "rrr", "rrr", "rrr", 'r', new ItemStack(RedPowerItems.ruby) });
 		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.ruby, 9), new ItemStack(RedPowerBlocks.ruby_block));
-		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.emerald_block), "eee", "eee", "eee", 'e', new ItemStack(RedPowerItems.emerald));
-		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.emerald, 9), new ItemStack(RedPowerBlocks.emerald_block));
+		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.emerald_block), "eee", "eee", "eee", 'e', new ItemStack(RedPowerItems.EMERALD));
+		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.EMERALD, 9), new ItemStack(RedPowerBlocks.emerald_block));
 		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.sapphire_block), "sss", "sss", "sss", 's', new ItemStack(RedPowerItems.sapphire));
 		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.sapphire, 9), new ItemStack(RedPowerBlocks.sapphire_block));
 		
@@ -103,12 +103,12 @@ public class RedPowerCrafting {
 		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.silver_ingot, 9), new ItemStack(RedPowerBlocks.silver_block));
 		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.tin_block), "ttt", "ttt", "ttt", 't', new ItemStack(RedPowerItems.tin_ingot));
 		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.tin_ingot, 9), new ItemStack(RedPowerBlocks.tin_block));
-		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.copper_block), "ccc", "ccc", "ccc", 'c', new ItemStack(RedPowerItems.copper_ingot));
-		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.copper_ingot, 9), new ItemStack(RedPowerBlocks.copper_block));
+		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.copper_block), "ccc", "ccc", "ccc", 'c', new ItemStack(RedPowerItems.COPPER_INGOT));
+		GameRegistry.addShapelessRecipe(new ItemStack(RedPowerItems.COPPER_INGOT, 9), new ItemStack(RedPowerBlocks.copper_block));
 		
 		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.alloy_furnace), "bbb", "b b", "bbb", 'b', new ItemStack(Blocks.BRICK_BLOCK));
 		// GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.blockBlulectricAlloyFurnace), "ccc", "c c", "ibi", 'c', new ItemStack(Blocks.clay), 'i', new ItemStack(Items.iron_ingot), 'b', new ItemStack(RedPowerItems.itemBlueAlloyIngot));
-		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.copper_block), "ccc", "ccc", "ccc", 'c', new ItemStack(RedPowerItems.copper_ingot));
+		GameRegistry.addRecipe(new ItemStack(RedPowerBlocks.copper_block), "ccc", "ccc", "ccc", 'c', new ItemStack(RedPowerItems.COPPER_INGOT));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.buffer, true, new Object[] { "iwi", "w w", "iwi", 'i', Blocks.IRON_BARS, 'w', "plankWood" }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.project_table, true, new Object[] { "sss", "wtw", "wcw", 's', Blocks.STONE, 'w', "plankWood", 't', Blocks.CRAFTING_TABLE, 'c', Blocks.CHEST }));
@@ -138,7 +138,7 @@ public class RedPowerCrafting {
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.ejector, true, new Object[] { "wbw", "wtw", "crc", 'w', "plankWood", 'b', RedPowerBlocks.buffer, 't', RedPowerBlocks.transposer, 'c', "cobblestone", 'r', Items.REDSTONE }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.relay, true, new Object[] { "wbw", "wtw", "crc", 'w', "plankWood", 'b', RedPowerBlocks.buffer, 't', RedPowerBlocks.transposer, 'c', "cobblestone", 'r', RedPowerItems.red_doped_wafer }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.manager, true, new Object[] { "iri", "RsR", "wbw", 'i', Items.IRON_INGOT, 'r', RedPowerBlocks.regulator, 'R', RedPowerItems.red_doped_wafer, 's', RedPowerBlocks.sorting_machine, 'w', "plankWood", 'b', "ingotBlueAlloy" }));
-		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.assembler, true, new Object[] { "iii", "pmp", "ibi", 'i', Items.IRON_INGOT, 'p', RedPowerBlocks.fluid_pipe, 'm', RedPowerItems.blulectric_motor, 'b', "ingotBlueAlloy" }));
+		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.assembler, true, new Object[] { "iii", "pmp", "ibi", 'i', Items.IRON_INGOT, 'p', RedPowerBlocks.fluid_pipe, 'm', RedPowerItems.BLULECTRIC_MOTOR, 'b', "ingotBlueAlloy" }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.pump, true, new Object[] { "bob", "o o", "bob", 'b', "ingotBlueAlloy", 'o', Blocks.OBSIDIAN }));
 		GameRegistry.addRecipe(new ShapedOreRecipe(RedPowerBlocks.grate, true, new Object[] { "bbb", "b b", "bpb", 'b', Blocks.IRON_BARS, 'p', RedPowerBlocks.fluid_pipe }));
 		

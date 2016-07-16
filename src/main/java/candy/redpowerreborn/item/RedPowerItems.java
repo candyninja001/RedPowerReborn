@@ -26,52 +26,52 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
 public class RedPowerItems {
-	public static Item athame;
-	public static Item battery;
-	public static Item blue_alloy_ingot;
-	public static Item blue_doped_wafer;
-	public static Item blulectric_motor;
-	public static Item brass_ingot;
-	public static Item brass_gear;
-	public static Item canvas;
-	public static Item canvas_bag;
-	public static Item copper_coil;
-	public static Item copper_ingot;
-	public static Item copper_nugget;
-	public static Item copper_wire;
-	public static Item diamond_drawplate;
-	public static Item diamond_handsaw;
-	public static Item diamond_sickle;
-	public static Item emerald;
-	public static Item emerald_axe;
-	public static Item emerald_handsaw;
-	public static Item emerald_hoe;
-	public static Item emerald_pickaxe;
-	public static Item emerald_shovel;
-	public static Item emerald_sickle;
-	public static Item emerald_sword;
-	public static Item flax_seed;
-	public static Item gold_sickle;
-	public static Item indigo_dye;
-	public static Item iron_handsaw;
-	public static Item iron_nugget;
-	public static Item iron_sickle;
-	public static Item iron_wire;
-	public static Item lumar;
-	public static Item nikolite;
-	public static Item paint_brush;
-	public static Item paint_brush_white;
-	public static Item paint_brush_black;
-	public static Item paint_brush_orange;
-	public static Item paint_brush_magenta;
-	public static Item paint_brush_light_blue;
-	public static Item paint_brush_yellow;
-	public static Item paint_brush_lime;
-	public static Item paint_brush_pink;
-	public static Item paint_brush_gray;
-	public static Item paint_brush_light_gray;
-	public static Item paint_brush_cyan;
-	public static Item paint_brush_purple;
+	public static Item ATHAME;
+	public static Item BATTERY;
+	public static Item BLUE_ALLOY_INGOT;
+	public static Item BLUE_DOPED_WAFER;
+	public static Item BLULECTRIC_MOTOR;
+	public static Item BRASS_INGOT;
+	public static Item BRASS_GEAR;
+	public static Item CANVAS;
+	public static Item CANVAS_BAG;
+	public static Item COPPER_COIL;
+	public static Item COPPER_INGOT;
+	public static Item COPPER_NUGGET;
+	public static Item COPPER_WIRE;
+	public static Item DIAMOND_DRAWPLATE;
+	public static Item DIAMOND_HANDSAW;
+	public static Item DIAMOND_SICKLE;
+	public static Item EMERALD;
+	public static Item EMERALD_AXE;
+	public static Item EMERALD_HANDSAW;
+	public static Item EMERALD_HOE;
+	public static Item EMERALD_PICKAXE;
+	public static Item EMERALD_SHOVEL;
+	public static Item EMERALD_SICKLE;
+	public static Item EMERALD_SWORD;
+	public static Item FLAX_SEED;
+	public static Item GOLD_SICKLE;
+	public static Item INDIGO_DYE;
+	public static Item IRON_HANDSAW;
+	public static Item IRON_NUGGET;
+	public static Item IRON_SICKLE;
+	public static Item IRON_WIRE;
+	public static Item LUMAR;
+	public static Item NIKOLITE;
+	public static Item PAINT_BRUSH;
+	public static Item PAINT_BRUSH_WHITE;
+	public static Item PAINT_BRUSH_BLACK;
+	public static Item PAINT_BRUSH_ORANGE;
+	public static Item PAINT_BRUSH_MAGENTA;
+	public static Item PAINT_BRUSH_LIGHT_BLUE;
+	public static Item PAINT_BRUSH_YELLOW;
+	public static Item PAINT_BRUSH_LIME;
+	public static Item PAINT_BRUSH_PINK;
+	public static Item PAINT_BRUSH_GRAY;
+	public static Item PAINT_BRUSH_LIGHT_GRAY;
+	public static Item PAINT_BRUSH_CYAN;
+	public static Item PAINT_BRUSH_PURPLE;
 	public static Item paint_brush_blue;
 	public static Item paint_brush_brown;
 	public static Item paint_brush_green;
@@ -140,109 +140,109 @@ public class RedPowerItems {
 	public static Item wooden_windmill;
 	public static Item wool_card;
 	
-	public static ToolMaterial EMERALD;
-	public static ToolMaterial RUBY;
-	public static ToolMaterial SAPPHIRE;
+	public static ToolMaterial EMERALD_TOOL_MATERIAL;
+	public static ToolMaterial RUBY_TOOL_MATERIAL;
+	public static ToolMaterial SAPPHIRE_TOOL_MATERIAL;
 
 	public static void preInit(FMLPreInitializationEvent event) {
 		
 		//might have to register these after the emeralds but still before the tools
-		EMERALD = EnumHelper.addToolMaterial("EMERALD", 2, 500, 8.0F, 3.0F, 8).setRepairItem(new ItemStack(emerald));//TODO check values later maybe
-		RUBY = EnumHelper.addToolMaterial("RUBY", 2, 500, 8.0F, 3.0F, 8).setRepairItem(new ItemStack(ruby));
-		SAPPHIRE = EnumHelper.addToolMaterial("SAPPHIRE", 2, 500, 8.0F, 3.0F, 8).setRepairItem(new ItemStack(sapphire));
+		EMERALD_TOOL_MATERIAL = EnumHelper.addToolMaterial("EMERALD", 2, 500, 8.0F, 3.0F, 8).setRepairItem(new ItemStack(EMERALD));//TODO check values later maybe
+		RUBY_TOOL_MATERIAL = EnumHelper.addToolMaterial("RUBY", 2, 500, 8.0F, 3.0F, 8).setRepairItem(new ItemStack(ruby));
+		SAPPHIRE_TOOL_MATERIAL = EnumHelper.addToolMaterial("SAPPHIRE", 2, 500, 8.0F, 3.0F, 8).setRepairItem(new ItemStack(sapphire));
 		
-		athame = new ItemAthame().setUnlocalizedName(RedPower.MODID + "_athame").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(athame, "athame");
-		battery = new ItemBattery().setUnlocalizedName(RedPower.MODID + "_battery").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(battery, "battery");
-		blue_alloy_ingot = new Item().setUnlocalizedName(RedPower.MODID + "_ingotBlueAlloy").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(blue_alloy_ingot, "blue_alloy_ingot");
-		blue_doped_wafer = new Item().setUnlocalizedName(RedPower.MODID + "_blueDopedWafer").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(blue_doped_wafer, "blue_doped_wafer");
-		blulectric_motor = new Item().setUnlocalizedName(RedPower.MODID + "_blulectricMotor").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(blulectric_motor, "blulectric_motor");
-		brass_ingot = new Item().setUnlocalizedName(RedPower.MODID + "_ingotBrass").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(brass_ingot, "brass_ingot");
-		brass_gear = new Item().setUnlocalizedName(RedPower.MODID + "_gearBrass").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(brass_gear, "brass_gear");
-		canvas = new Item().setUnlocalizedName(RedPower.MODID + "_canvas").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(canvas, "canvas");
-		canvas_bag = new ItemCanvasBag().setUnlocalizedName(RedPower.MODID + "_canvasBag").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(canvas_bag, "canvas_bag");
-		copper_coil = new Item().setUnlocalizedName(RedPower.MODID + "_coilCopper").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(copper_coil, "copper_coil");
-		copper_ingot = new Item().setUnlocalizedName(RedPower.MODID + "_ingotCopper").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(copper_ingot, "copper_ingot");
-		copper_nugget = new Item().setUnlocalizedName(RedPower.MODID + "_nuggetCopper").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(copper_nugget, "copper_nugget");
-		copper_wire = new Item().setUnlocalizedName(RedPower.MODID + "_wireCopper").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(copper_wire, "copper_wire");
-		diamond_drawplate = new ItemDrawplate(ToolMaterial.DIAMOND).setUnlocalizedName(RedPower.MODID + "_drawplateDiamond").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(diamond_drawplate, "diamond_drawplate");
-		diamond_handsaw = new ItemHandsaw(ToolMaterial.DIAMOND).setUnlocalizedName(RedPower.MODID + "_handsawDiamond").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(diamond_handsaw, "diamond_handsaw");
-		diamond_sickle = new ItemSickle(ToolMaterial.DIAMOND).setUnlocalizedName(RedPower.MODID + "_sickleDiamond").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(diamond_sickle, "diamond_sickle");
-		emerald = new Item().setUnlocalizedName(RedPower.MODID + "_emerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald, "emerald");
-		emerald_axe = new ItemRedPowerAxe(EMERALD).setUnlocalizedName(RedPower.MODID + "_axeEmerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald_axe, "emerald_axe");
-		emerald_handsaw = new ItemHandsaw(EMERALD).setUnlocalizedName(RedPower.MODID + "_handsawEmerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald_handsaw, "emerald_handsaw");
-		emerald_hoe = new ItemHoe(EMERALD).setUnlocalizedName(RedPower.MODID + "_hoeEmerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald_hoe, "emerald_hoe");
-		emerald_pickaxe = new ItemRedPowerPickaxe(EMERALD).setUnlocalizedName(RedPower.MODID + "_pickaxeEmerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald_pickaxe, "emerald_pickaxe");
-		emerald_shovel = new ItemSpade(EMERALD).setUnlocalizedName(RedPower.MODID + "_shovelEmerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald_shovel, "emerald_shovel");
-		emerald_sickle = new ItemSickle(EMERALD).setUnlocalizedName(RedPower.MODID + "_sickleEmerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald_sickle, "emerald_sickle");
-		emerald_sword = new ItemSword(EMERALD).setUnlocalizedName(RedPower.MODID + "_swordEmerald").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(emerald_sword, "emerald_sword");
-		flax_seed = new ItemSeeds(RedPowerBlocks.flax, Blocks.FARMLAND).setUnlocalizedName(RedPower.MODID + "_seedFlax").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(flax_seed, "flax_seed");
-		gold_sickle = new ItemSickle(ToolMaterial.GOLD).setUnlocalizedName(RedPower.MODID + "_sickleGold").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(gold_sickle, "gold_sickle");
-		indigo_dye = new Item().setUnlocalizedName(RedPower.MODID + "_dye.indigo").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(indigo_dye, "indigo_dye");
-		iron_handsaw = new ItemHandsaw(ToolMaterial.IRON).setUnlocalizedName(RedPower.MODID + "_handsawIron").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(iron_handsaw, "iron_handsaw");
-		iron_nugget = new Item().setUnlocalizedName(RedPower.MODID + "_nuggetIron").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(iron_nugget, "iron_nugget");
-		iron_sickle = new ItemSickle(ToolMaterial.IRON).setUnlocalizedName(RedPower.MODID + "_sickleIron").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(iron_sickle, "iron_sickle");
-		iron_wire = new Item().setUnlocalizedName(RedPower.MODID + "_wireIron").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(iron_wire, "iron_wire");
-		lumar = new ItemLumar().setUnlocalizedName(RedPower.MODID + "_lumar").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(lumar, "lumar");
-		nikolite = new Item().setUnlocalizedName(RedPower.MODID + "_nikolite").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(nikolite, "nikolite");
-		paint_brush = new Item().setUnlocalizedName(RedPower.MODID + "_paintBrush").setCreativeTab(RedPower.tabRedPower);
-		GameRegistry.registerItem(paint_brush, "paint_brush");
-		paint_brush_white = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.white").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_white, "paint_brush_white");
-		paint_brush_black = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.black").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_black, "paint_brush_black");
-		paint_brush_orange = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.orange").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_orange, "paint_brush_orange");
-		paint_brush_magenta = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.magenta").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_magenta, "paint_brush_magenta");
-		paint_brush_light_blue = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.lightBlue").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_light_blue, "paint_brush_light_blue");
-		paint_brush_yellow = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.yellow").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_yellow, "paint_brush_yellow");
-		paint_brush_lime = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.lime").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_lime, "paint_brush_lime");
-		paint_brush_pink = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.pink").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_pink, "paint_brush_pink");
-		paint_brush_gray = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.gray").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_gray, "paint_brush_gray");
-		paint_brush_light_gray = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.lightGray").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_light_gray, "paint_brush_light_gray");
-		paint_brush_cyan = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.cyan").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_cyan, "paint_brush_cyan");
-		paint_brush_purple = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.purple").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
-		GameRegistry.registerItem(paint_brush_purple, "paint_brush_purple");
+		ATHAME = new ItemAthame().setUnlocalizedName(RedPower.MODID + "_athame").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(ATHAME, "athame");
+		BATTERY = new ItemBattery().setUnlocalizedName(RedPower.MODID + "_battery").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(BATTERY, "battery");
+		BLUE_ALLOY_INGOT = new Item().setUnlocalizedName(RedPower.MODID + "_ingotBlueAlloy").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(BLUE_ALLOY_INGOT, "blue_alloy_ingot");
+		BLUE_DOPED_WAFER = new Item().setUnlocalizedName(RedPower.MODID + "_blueDopedWafer").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(BLUE_DOPED_WAFER, "blue_doped_wafer");
+		BLULECTRIC_MOTOR = new Item().setUnlocalizedName(RedPower.MODID + "_blulectricMotor").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(BLULECTRIC_MOTOR, "blulectric_motor");
+		BRASS_INGOT = new Item().setUnlocalizedName(RedPower.MODID + "_ingotBrass").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(BRASS_INGOT, "brass_ingot");
+		BRASS_GEAR = new Item().setUnlocalizedName(RedPower.MODID + "_gearBrass").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(BRASS_GEAR, "brass_gear");
+		CANVAS = new Item().setUnlocalizedName(RedPower.MODID + "_canvas").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(CANVAS, "canvas");
+		CANVAS_BAG = new ItemCanvasBag().setUnlocalizedName(RedPower.MODID + "_canvasBag").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(CANVAS_BAG, "canvas_bag");
+		COPPER_COIL = new Item().setUnlocalizedName(RedPower.MODID + "_coilCopper").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(COPPER_COIL, "copper_coil");
+		COPPER_INGOT = new Item().setUnlocalizedName(RedPower.MODID + "_ingotCopper").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(COPPER_INGOT, "copper_ingot");
+		COPPER_NUGGET = new Item().setUnlocalizedName(RedPower.MODID + "_nuggetCopper").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(COPPER_NUGGET, "copper_nugget");
+		COPPER_WIRE = new Item().setUnlocalizedName(RedPower.MODID + "_wireCopper").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(COPPER_WIRE, "copper_wire");
+		DIAMOND_DRAWPLATE = new ItemDrawplate(ToolMaterial.DIAMOND).setUnlocalizedName(RedPower.MODID + "_drawplateDiamond").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(DIAMOND_DRAWPLATE, "diamond_drawplate");
+		DIAMOND_HANDSAW = new ItemHandsaw(ToolMaterial.DIAMOND).setUnlocalizedName(RedPower.MODID + "_handsawDiamond").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(DIAMOND_HANDSAW, "diamond_handsaw");
+		DIAMOND_SICKLE = new ItemSickle(ToolMaterial.DIAMOND).setUnlocalizedName(RedPower.MODID + "_sickleDiamond").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(DIAMOND_SICKLE, "diamond_sickle");
+		EMERALD = new Item().setUnlocalizedName(RedPower.MODID + "_emerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD, "emerald");
+		EMERALD_AXE = new ItemRedPowerAxe(EMERALD_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_axeEmerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD_AXE, "emerald_axe");
+		EMERALD_HANDSAW = new ItemHandsaw(EMERALD_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_handsawEmerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD_HANDSAW, "emerald_handsaw");
+		EMERALD_HOE = new ItemHoe(EMERALD_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_hoeEmerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD_HOE, "emerald_hoe");
+		EMERALD_PICKAXE = new ItemRedPowerPickaxe(EMERALD_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_pickaxeEmerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD_PICKAXE, "emerald_pickaxe");
+		EMERALD_SHOVEL = new ItemSpade(EMERALD_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_shovelEmerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD_SHOVEL, "emerald_shovel");
+		EMERALD_SICKLE = new ItemSickle(EMERALD_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_sickleEmerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD_SICKLE, "emerald_sickle");
+		EMERALD_SWORD = new ItemSword(EMERALD_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_swordEmerald").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(EMERALD_SWORD, "emerald_sword");
+		FLAX_SEED = new ItemSeeds(RedPowerBlocks.flax, Blocks.FARMLAND).setUnlocalizedName(RedPower.MODID + "_seedFlax").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(FLAX_SEED, "flax_seed");
+		GOLD_SICKLE = new ItemSickle(ToolMaterial.GOLD).setUnlocalizedName(RedPower.MODID + "_sickleGold").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(GOLD_SICKLE, "gold_sickle");
+		INDIGO_DYE = new Item().setUnlocalizedName(RedPower.MODID + "_dye.indigo").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(INDIGO_DYE, "indigo_dye");
+		IRON_HANDSAW = new ItemHandsaw(ToolMaterial.IRON).setUnlocalizedName(RedPower.MODID + "_handsawIron").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(IRON_HANDSAW, "iron_handsaw");
+		IRON_NUGGET = new Item().setUnlocalizedName(RedPower.MODID + "_nuggetIron").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(IRON_NUGGET, "iron_nugget");
+		IRON_SICKLE = new ItemSickle(ToolMaterial.IRON).setUnlocalizedName(RedPower.MODID + "_sickleIron").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(IRON_SICKLE, "iron_sickle");
+		IRON_WIRE = new Item().setUnlocalizedName(RedPower.MODID + "_wireIron").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(IRON_WIRE, "iron_wire");
+		LUMAR = new ItemLumar().setUnlocalizedName(RedPower.MODID + "_lumar").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(LUMAR, "lumar");
+		NIKOLITE = new Item().setUnlocalizedName(RedPower.MODID + "_nikolite").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(NIKOLITE, "nikolite");
+		PAINT_BRUSH = new Item().setUnlocalizedName(RedPower.MODID + "_paintBrush").setCreativeTab(RedPower.tabRedPower);
+		GameRegistry.registerItem(PAINT_BRUSH, "paint_brush");
+		PAINT_BRUSH_WHITE = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.white").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_WHITE, "paint_brush_white");
+		PAINT_BRUSH_BLACK = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.black").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_BLACK, "paint_brush_black");
+		PAINT_BRUSH_ORANGE = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.orange").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_ORANGE, "paint_brush_orange");
+		PAINT_BRUSH_MAGENTA = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.magenta").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_MAGENTA, "paint_brush_magenta");
+		PAINT_BRUSH_LIGHT_BLUE = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.lightBlue").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_LIGHT_BLUE, "paint_brush_light_blue");
+		PAINT_BRUSH_YELLOW = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.yellow").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_YELLOW, "paint_brush_yellow");
+		PAINT_BRUSH_LIME = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.lime").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_LIME, "paint_brush_lime");
+		PAINT_BRUSH_PINK = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.pink").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_PINK, "paint_brush_pink");
+		PAINT_BRUSH_GRAY = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.gray").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_GRAY, "paint_brush_gray");
+		PAINT_BRUSH_LIGHT_GRAY = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.lightGray").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_LIGHT_GRAY, "paint_brush_light_gray");
+		PAINT_BRUSH_CYAN = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.cyan").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_CYAN, "paint_brush_cyan");
+		PAINT_BRUSH_PURPLE = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.purple").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		GameRegistry.registerItem(PAINT_BRUSH_PURPLE, "paint_brush_purple");
 		paint_brush_blue = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.blue").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
 		GameRegistry.registerItem(paint_brush_blue, "paint_brush_blue");
 		paint_brush_brown = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.brown").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
@@ -293,35 +293,35 @@ public class RedPowerItems {
 		GameRegistry.registerItem(red_doped_wafer, "red_doped_wafer");
 		ruby = new Item().setUnlocalizedName(RedPower.MODID + "_ruby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby, "ruby");
-		ruby_axe = new ItemRedPowerAxe(RUBY).setUnlocalizedName(RedPower.MODID + "_axeRuby").setCreativeTab(RedPower.tabRedPower);
+		ruby_axe = new ItemRedPowerAxe(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_axeRuby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby_axe, "ruby_axe");
-		ruby_handsaw = new ItemHandsaw(RUBY).setUnlocalizedName(RedPower.MODID + "_handsawRuby").setCreativeTab(RedPower.tabRedPower);
+		ruby_handsaw = new ItemHandsaw(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_handsawRuby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby_handsaw, "ruby_handsaw");
-		ruby_hoe = new ItemHoe(RUBY).setUnlocalizedName(RedPower.MODID + "_hoeRuby").setCreativeTab(RedPower.tabRedPower);
+		ruby_hoe = new ItemHoe(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_hoeRuby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby_hoe, "ruby_hoe");
-		ruby_pickaxe = new ItemRedPowerPickaxe(RUBY).setUnlocalizedName(RedPower.MODID + "_pickaxeRuby").setCreativeTab(RedPower.tabRedPower);
+		ruby_pickaxe = new ItemRedPowerPickaxe(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_pickaxeRuby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby_pickaxe, "ruby_pickaxe");
-		ruby_shovel = new ItemSpade(RUBY).setUnlocalizedName(RedPower.MODID + "_shovelRuby").setCreativeTab(RedPower.tabRedPower);
+		ruby_shovel = new ItemSpade(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_shovelRuby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby_shovel, "ruby_shovel");
-		ruby_sickle = new ItemSickle(RUBY).setUnlocalizedName(RedPower.MODID + "_sickleRuby").setCreativeTab(RedPower.tabRedPower);
+		ruby_sickle = new ItemSickle(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_sickleRuby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby_sickle, "ruby_sickle");
-		ruby_sword = new ItemSword(RUBY).setUnlocalizedName(RedPower.MODID + "_swordRuby").setCreativeTab(RedPower.tabRedPower);
+		ruby_sword = new ItemSword(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_swordRuby").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(ruby_sword, "ruby_sword");
 		sapphire = new Item().setUnlocalizedName(RedPower.MODID + "_sapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire, "sapphire");
-		sapphire_axe = new ItemRedPowerAxe(SAPPHIRE).setUnlocalizedName(RedPower.MODID + "_axeSapphire").setCreativeTab(RedPower.tabRedPower);
+		sapphire_axe = new ItemRedPowerAxe(SAPPHIRE_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_axeSapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire_axe, "sapphire_axe");
-		sapphire_handsaw = new ItemHandsaw(SAPPHIRE).setUnlocalizedName(RedPower.MODID + "_handsawSapphire").setCreativeTab(RedPower.tabRedPower);
+		sapphire_handsaw = new ItemHandsaw(SAPPHIRE_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_handsawSapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire_handsaw, "sapphire_handsaw");
-		sapphire_hoe = new ItemHoe(SAPPHIRE).setUnlocalizedName(RedPower.MODID + "_hoeSapphire").setCreativeTab(RedPower.tabRedPower);
+		sapphire_hoe = new ItemHoe(SAPPHIRE_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_hoeSapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire_hoe, "sapphire_hoe");
-		sapphire_pickaxe = new ItemRedPowerPickaxe(SAPPHIRE).setUnlocalizedName(RedPower.MODID + "_pickaxeSapphire").setCreativeTab(RedPower.tabRedPower);
+		sapphire_pickaxe = new ItemRedPowerPickaxe(SAPPHIRE_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_pickaxeSapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire_pickaxe, "sapphire_pickaxe");
-		sapphire_shovel = new ItemSpade(SAPPHIRE).setUnlocalizedName(RedPower.MODID + "_shovelSapphire").setCreativeTab(RedPower.tabRedPower);
+		sapphire_shovel = new ItemSpade(SAPPHIRE_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_shovelSapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire_shovel, "sapphire_shovel");
-		sapphire_sickle = new ItemSickle(SAPPHIRE).setUnlocalizedName(RedPower.MODID + "_sickleSapphire").setCreativeTab(RedPower.tabRedPower);
+		sapphire_sickle = new ItemSickle(SAPPHIRE_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_sickleSapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire_sickle, "sapphire_sickle");
-		sapphire_sword = new ItemSword(RUBY).setUnlocalizedName(RedPower.MODID + "_swordSapphire").setCreativeTab(RedPower.tabRedPower);
+		sapphire_sword = new ItemSword(RUBY_TOOL_MATERIAL).setUnlocalizedName(RedPower.MODID + "_swordSapphire").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(sapphire_sword, "sapphire_sword");
 		screwdriver = new Item/*Screwdriver*/().setUnlocalizedName(RedPower.MODID + "_screwdriver").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(screwdriver, "screwdriver");
@@ -383,56 +383,56 @@ public class RedPowerItems {
 		if (event.getSide() == Side.CLIENT) {
 			RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 			
-			renderItem.getItemModelMesher().register(athame, 0, new ModelResourceLocation(RedPower.MODID + ":athame", "inventory"));
-			renderItem.getItemModelMesher().register(battery, 0, new ModelResourceLocation(RedPower.MODID + ":battery", "inventory"));
-			renderItem.getItemModelMesher().register(blue_alloy_ingot, 0, new ModelResourceLocation(RedPower.MODID + ":blue_alloy_ingot", "inventory"));
-			renderItem.getItemModelMesher().register(blue_doped_wafer, 0, new ModelResourceLocation(RedPower.MODID + ":blue_doped_wafer", "inventory"));
-			renderItem.getItemModelMesher().register(blulectric_motor, 0, new ModelResourceLocation(RedPower.MODID + ":blulectric_motor", "inventory"));
-			renderItem.getItemModelMesher().register(brass_ingot, 0, new ModelResourceLocation(RedPower.MODID + ":brass_ingot", "inventory"));
-			renderItem.getItemModelMesher().register(brass_gear, 0, new ModelResourceLocation(RedPower.MODID + ":brass_gear", "inventory"));
-			renderItem.getItemModelMesher().register(canvas, 0, new ModelResourceLocation(RedPower.MODID + ":canvas", "inventory"));
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(canvas_bag, new ItemMeshDefinition() {
+			renderItem.getItemModelMesher().register(ATHAME, 0, new ModelResourceLocation(RedPower.MODID + ":athame", "inventory"));
+			renderItem.getItemModelMesher().register(BATTERY, 0, new ModelResourceLocation(RedPower.MODID + ":battery", "inventory"));
+			renderItem.getItemModelMesher().register(BLUE_ALLOY_INGOT, 0, new ModelResourceLocation(RedPower.MODID + ":blue_alloy_ingot", "inventory"));
+			renderItem.getItemModelMesher().register(BLUE_DOPED_WAFER, 0, new ModelResourceLocation(RedPower.MODID + ":blue_doped_wafer", "inventory"));
+			renderItem.getItemModelMesher().register(BLULECTRIC_MOTOR, 0, new ModelResourceLocation(RedPower.MODID + ":blulectric_motor", "inventory"));
+			renderItem.getItemModelMesher().register(BRASS_INGOT, 0, new ModelResourceLocation(RedPower.MODID + ":brass_ingot", "inventory"));
+			renderItem.getItemModelMesher().register(BRASS_GEAR, 0, new ModelResourceLocation(RedPower.MODID + ":brass_gear", "inventory"));
+			renderItem.getItemModelMesher().register(CANVAS, 0, new ModelResourceLocation(RedPower.MODID + ":canvas", "inventory"));
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CANVAS_BAG, new ItemMeshDefinition() {
 				public ModelResourceLocation getModelLocation(ItemStack stack) {
 					return new ModelResourceLocation(RedPower.MODID + ":canvas_bag", "inventory");
 				}
 			});
-			renderItem.getItemModelMesher().register(copper_coil, 0, new ModelResourceLocation(RedPower.MODID + ":copper_coil", "inventory"));
-			renderItem.getItemModelMesher().register(copper_ingot, 0, new ModelResourceLocation(RedPower.MODID + ":copper_ingot", "inventory"));
-			renderItem.getItemModelMesher().register(copper_nugget, 0, new ModelResourceLocation(RedPower.MODID + ":copper_nugget", "inventory"));
-			renderItem.getItemModelMesher().register(copper_wire, 0, new ModelResourceLocation(RedPower.MODID + ":copper_wire", "inventory"));
-			renderItem.getItemModelMesher().register(diamond_drawplate, 0, new ModelResourceLocation(RedPower.MODID + ":diamond_drawplate", "inventory"));
-			renderItem.getItemModelMesher().register(diamond_handsaw, 0, new ModelResourceLocation(RedPower.MODID + ":diamond_handsaw", "inventory"));
-			renderItem.getItemModelMesher().register(diamond_sickle, 0, new ModelResourceLocation(RedPower.MODID + ":diamond_sickle", "inventory"));
-			renderItem.getItemModelMesher().register(emerald, 0, new ModelResourceLocation(RedPower.MODID + ":emerald", "inventory"));
-			renderItem.getItemModelMesher().register(emerald_axe, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_axe", "inventory"));
-			renderItem.getItemModelMesher().register(emerald_handsaw, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_handsaw", "inventory"));
-			renderItem.getItemModelMesher().register(emerald_hoe, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_hoe", "inventory"));
-			renderItem.getItemModelMesher().register(emerald_pickaxe, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_pickaxe", "inventory"));
-			renderItem.getItemModelMesher().register(emerald_shovel, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_shovel", "inventory"));
-			renderItem.getItemModelMesher().register(emerald_sickle, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_sickle", "inventory"));
-			renderItem.getItemModelMesher().register(emerald_sword, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_sword", "inventory"));
-			renderItem.getItemModelMesher().register(flax_seed, 0, new ModelResourceLocation(RedPower.MODID + ":flax_seed", "inventory"));
-			renderItem.getItemModelMesher().register(gold_sickle, 0, new ModelResourceLocation(RedPower.MODID + ":gold_sickle", "inventory"));
-			renderItem.getItemModelMesher().register(indigo_dye, 0, new ModelResourceLocation(RedPower.MODID + ":indigo_dye", "inventory"));
-			renderItem.getItemModelMesher().register(iron_handsaw, 0, new ModelResourceLocation(RedPower.MODID + ":iron_handsaw", "inventory"));
-			renderItem.getItemModelMesher().register(iron_nugget, 0, new ModelResourceLocation(RedPower.MODID + ":iron_nugget", "inventory"));
-			renderItem.getItemModelMesher().register(iron_sickle, 0, new ModelResourceLocation(RedPower.MODID + ":iron_sickle", "inventory"));
-			renderItem.getItemModelMesher().register(iron_wire, 0, new ModelResourceLocation(RedPower.MODID + ":iron_wire", "inventory"));
-			renderItem.getItemModelMesher().register(lumar, 0, new ModelResourceLocation(RedPower.MODID + ":lumar", "inventory"));//TODO  find out how to register the subitems of lumar
-			renderItem.getItemModelMesher().register(nikolite, 0, new ModelResourceLocation(RedPower.MODID + ":nikolite", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_white, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_white", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_black, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_black", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_orange, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_orange", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_magenta, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_magenta", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_light_blue, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_light_blue", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_yellow, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_yellow", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_lime, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_lime", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_pink, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_pink", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_gray, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_gray", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_light_gray, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_light_gray", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_cyan, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_cyan", "inventory"));
-			renderItem.getItemModelMesher().register(paint_brush_purple, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_purple", "inventory"));
+			renderItem.getItemModelMesher().register(COPPER_COIL, 0, new ModelResourceLocation(RedPower.MODID + ":copper_coil", "inventory"));
+			renderItem.getItemModelMesher().register(COPPER_INGOT, 0, new ModelResourceLocation(RedPower.MODID + ":copper_ingot", "inventory"));
+			renderItem.getItemModelMesher().register(COPPER_NUGGET, 0, new ModelResourceLocation(RedPower.MODID + ":copper_nugget", "inventory"));
+			renderItem.getItemModelMesher().register(COPPER_WIRE, 0, new ModelResourceLocation(RedPower.MODID + ":copper_wire", "inventory"));
+			renderItem.getItemModelMesher().register(DIAMOND_DRAWPLATE, 0, new ModelResourceLocation(RedPower.MODID + ":diamond_drawplate", "inventory"));
+			renderItem.getItemModelMesher().register(DIAMOND_HANDSAW, 0, new ModelResourceLocation(RedPower.MODID + ":diamond_handsaw", "inventory"));
+			renderItem.getItemModelMesher().register(DIAMOND_SICKLE, 0, new ModelResourceLocation(RedPower.MODID + ":diamond_sickle", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD, 0, new ModelResourceLocation(RedPower.MODID + ":emerald", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD_AXE, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_axe", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD_HANDSAW, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_handsaw", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD_HOE, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_hoe", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD_PICKAXE, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_pickaxe", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD_SHOVEL, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_shovel", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD_SICKLE, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_sickle", "inventory"));
+			renderItem.getItemModelMesher().register(EMERALD_SWORD, 0, new ModelResourceLocation(RedPower.MODID + ":emerald_sword", "inventory"));
+			renderItem.getItemModelMesher().register(FLAX_SEED, 0, new ModelResourceLocation(RedPower.MODID + ":flax_seed", "inventory"));
+			renderItem.getItemModelMesher().register(GOLD_SICKLE, 0, new ModelResourceLocation(RedPower.MODID + ":gold_sickle", "inventory"));
+			renderItem.getItemModelMesher().register(INDIGO_DYE, 0, new ModelResourceLocation(RedPower.MODID + ":indigo_dye", "inventory"));
+			renderItem.getItemModelMesher().register(IRON_HANDSAW, 0, new ModelResourceLocation(RedPower.MODID + ":iron_handsaw", "inventory"));
+			renderItem.getItemModelMesher().register(IRON_NUGGET, 0, new ModelResourceLocation(RedPower.MODID + ":iron_nugget", "inventory"));
+			renderItem.getItemModelMesher().register(IRON_SICKLE, 0, new ModelResourceLocation(RedPower.MODID + ":iron_sickle", "inventory"));
+			renderItem.getItemModelMesher().register(IRON_WIRE, 0, new ModelResourceLocation(RedPower.MODID + ":iron_wire", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 0, new ModelResourceLocation(RedPower.MODID + ":lumar", "inventory"));//TODO  find out how to register the subitems of lumar
+			renderItem.getItemModelMesher().register(NIKOLITE, 0, new ModelResourceLocation(RedPower.MODID + ":nikolite", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_WHITE, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_white", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_BLACK, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_black", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_ORANGE, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_orange", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_MAGENTA, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_magenta", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_LIGHT_BLUE, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_light_blue", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_YELLOW, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_yellow", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_LIME, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_lime", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_PINK, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_pink", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_GRAY, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_gray", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_LIGHT_GRAY, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_light_gray", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_CYAN, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_cyan", "inventory"));
+			renderItem.getItemModelMesher().register(PAINT_BRUSH_PURPLE, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_purple", "inventory"));
 			renderItem.getItemModelMesher().register(paint_brush_blue, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_blue", "inventory"));
 			renderItem.getItemModelMesher().register(paint_brush_brown, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_brown", "inventory"));
 			renderItem.getItemModelMesher().register(paint_brush_green, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_green", "inventory"));

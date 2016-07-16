@@ -21,23 +21,23 @@ public class RedPowerOreDictionary {
 		OreDictionary.registerOre("blockTin", RedPowerBlocks.tin_block);
 		OreDictionary.registerOre("blockCopper", RedPowerBlocks.copper_block);
 		OreDictionary.registerOre("ingotRedAlloy", RedPowerItems.red_alloy_ingot);
-		OreDictionary.registerOre("ingotBlueAlloy", RedPowerItems.blue_alloy_ingot);
-		OreDictionary.registerOre("ingotBrass", RedPowerItems.brass_ingot);
-		OreDictionary.registerOre("wireCopper", RedPowerItems.copper_wire);
-		OreDictionary.registerOre("wireIron", RedPowerItems.iron_wire);
-		OreDictionary.registerOre("dye", RedPowerItems.indigo_dye);
-		OreDictionary.registerOre("dyeBlue", RedPowerItems.indigo_dye);
-		OreDictionary.registerOre("nuggetIron", RedPowerItems.iron_nugget);
+		OreDictionary.registerOre("ingotBlueAlloy", RedPowerItems.BLUE_ALLOY_INGOT);
+		OreDictionary.registerOre("ingotBrass", RedPowerItems.BRASS_INGOT);
+		OreDictionary.registerOre("wireCopper", RedPowerItems.COPPER_WIRE);
+		OreDictionary.registerOre("wireIron", RedPowerItems.IRON_WIRE);
+		OreDictionary.registerOre("dye", RedPowerItems.INDIGO_DYE);
+		OreDictionary.registerOre("dyeBlue", RedPowerItems.INDIGO_DYE);
+		OreDictionary.registerOre("nuggetIron", RedPowerItems.IRON_NUGGET);
 		OreDictionary.registerOre("nuggetSilver", RedPowerItems.silver_nugget);
 		OreDictionary.registerOre("nuggetTin", RedPowerItems.tin_nugget);
-		OreDictionary.registerOre("nuggetCopper", RedPowerItems.copper_nugget);
+		OreDictionary.registerOre("nuggetCopper", RedPowerItems.COPPER_NUGGET);
 		OreDictionary.registerOre("gemRuby", RedPowerItems.ruby);
-		OreDictionary.registerOre("gemEmerald", RedPowerItems.emerald);
-		OreDictionary.registerOre("gemGreenSapphire", RedPowerItems.emerald);
+		OreDictionary.registerOre("gemEmerald", RedPowerItems.EMERALD);
+		OreDictionary.registerOre("gemGreenSapphire", RedPowerItems.EMERALD);
 		OreDictionary.registerOre("ingotSilver", RedPowerItems.silver_ingot);
 		OreDictionary.registerOre("ingotTin", RedPowerItems.tin_ingot);
-		OreDictionary.registerOre("ingotCopper", RedPowerItems.copper_ingot);
-		OreDictionary.registerOre("dustNikolite", RedPowerItems.nikolite);
-		OreDictionary.registerOre("gearBrass", RedPowerItems.brass_gear);
+		OreDictionary.registerOre("ingotCopper", RedPowerItems.COPPER_INGOT);
+		OreDictionary.registerOre("dustNikolite", RedPowerItems.NIKOLITE);
+		OreDictionary.registerOre("gearBrass", RedPowerItems.BRASS_GEAR);
 	}
 }
