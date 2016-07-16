@@ -237,7 +237,7 @@ public class RedPowerItems {
 		GameRegistry.registerItem(PAINT_BRUSH_PINK, "paint_brush_pink");
 		PAINT_BRUSH_GRAY = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.gray").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
 		GameRegistry.registerItem(PAINT_BRUSH_GRAY, "paint_brush_gray");
-		PAINT_BRUSH_LIGHT_GRAY = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.lightGray").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
+		PAINT_BRUSH_LIGHT_GRAY = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.silver").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
 		GameRegistry.registerItem(PAINT_BRUSH_LIGHT_GRAY, "paint_brush_light_gray");
 		PAINT_BRUSH_CYAN = new ItemPaintBrush(EnumDyeColor.BLACK).setUnlocalizedName(RedPower.MODID + "_paintBrush.cyan").setCreativeTab(RedPower.tabRedPower);//maybe return an unlocalized name the way ItemDye does.
 		GameRegistry.registerItem(PAINT_BRUSH_CYAN, "paint_brush_cyan");
@@ -271,7 +271,7 @@ public class RedPowerItems {
 		GameRegistry.registerItem(PAINT_CAN_PINK, "paint_can_pink");
 		PAINT_CAN_GRAY = new ItemPaintCan().setUnlocalizedName(RedPower.MODID + "_paintCan.gray").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(PAINT_CAN_GRAY, "paint_can_gray");
-		PAINT_CAN_LIGHT_GRAY = new ItemPaintCan().setUnlocalizedName(RedPower.MODID + "_paintCan.lightGray").setCreativeTab(RedPower.tabRedPower);
+		PAINT_CAN_LIGHT_GRAY = new ItemPaintCan().setUnlocalizedName(RedPower.MODID + "_paintCan.silver").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(PAINT_CAN_LIGHT_GRAY, "paint_can_light_gray");
 		PAINT_CAN_CYAN = new ItemPaintCan().setUnlocalizedName(RedPower.MODID + "_paintCan.cyan").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerItem(PAINT_CAN_CYAN, "paint_can_cyan");
@@ -418,7 +418,22 @@ public class RedPowerItems {
 			renderItem.getItemModelMesher().register(IRON_NUGGET, 0, new ModelResourceLocation(RedPower.MODID + ":iron_nugget", "inventory"));
 			renderItem.getItemModelMesher().register(IRON_SICKLE, 0, new ModelResourceLocation(RedPower.MODID + ":iron_sickle", "inventory"));
 			renderItem.getItemModelMesher().register(IRON_WIRE, 0, new ModelResourceLocation(RedPower.MODID + ":iron_wire", "inventory"));
-			renderItem.getItemModelMesher().register(LUMAR, 0, new ModelResourceLocation(RedPower.MODID + ":lumar", "inventory"));//TODO  find out how to register the subitems of lumar
+			renderItem.getItemModelMesher().register(LUMAR, 0, new ModelResourceLocation(RedPower.MODID + ":lumar_black", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 1, new ModelResourceLocation(RedPower.MODID + ":lumar_red", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 2, new ModelResourceLocation(RedPower.MODID + ":lumar_green", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 3, new ModelResourceLocation(RedPower.MODID + ":lumar_brown", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 4, new ModelResourceLocation(RedPower.MODID + ":lumar_blue", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 5, new ModelResourceLocation(RedPower.MODID + ":lumar_purple", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 6, new ModelResourceLocation(RedPower.MODID + ":lumar_cyan", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 7, new ModelResourceLocation(RedPower.MODID + ":lumar_light_gray", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 8, new ModelResourceLocation(RedPower.MODID + ":lumar_gray", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 9, new ModelResourceLocation(RedPower.MODID + ":lumar_pink", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 10, new ModelResourceLocation(RedPower.MODID + ":lumar_lime", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 11, new ModelResourceLocation(RedPower.MODID + ":lumar_yellow", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 12, new ModelResourceLocation(RedPower.MODID + ":lumar_light_blue", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 13, new ModelResourceLocation(RedPower.MODID + ":lumar_magenta", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 14, new ModelResourceLocation(RedPower.MODID + ":lumar_orange", "inventory"));
+			renderItem.getItemModelMesher().register(LUMAR, 15, new ModelResourceLocation(RedPower.MODID + ":lumar_white", "inventory"));//TODO  find out how to register the subitems of lumar
 			renderItem.getItemModelMesher().register(NIKOLITE, 0, new ModelResourceLocation(RedPower.MODID + ":nikolite", "inventory"));
 			renderItem.getItemModelMesher().register(PAINT_BRUSH, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush", "inventory"));
 			renderItem.getItemModelMesher().register(PAINT_BRUSH_WHITE, 0, new ModelResourceLocation(RedPower.MODID + ":paint_brush_white", "inventory"));
