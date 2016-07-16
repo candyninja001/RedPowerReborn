@@ -57,8 +57,8 @@ public class BlockAlloyFurnace extends BlockContainer
         IBlockState iblockstate = worldIn.getBlockState(pos);
         keepInventory = true;
 
-        worldIn.setBlockState(pos, RedPowerBlocks.alloy_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-        worldIn.setBlockState(pos, RedPowerBlocks.alloy_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        worldIn.setBlockState(pos, RedPowerBlocks.ALLOY_FURNACE.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        worldIn.setBlockState(pos, RedPowerBlocks.ALLOY_FURNACE.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
 
         keepInventory = false;
     }

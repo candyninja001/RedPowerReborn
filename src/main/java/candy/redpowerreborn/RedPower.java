@@ -54,7 +54,7 @@ public class RedPower {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
-			return Item.getItemFromBlock(RedPowerBlocks.project_table);
+			return Item.getItemFromBlock(RedPowerBlocks.PROJECT_TABLE);
 		}
 	};
 	

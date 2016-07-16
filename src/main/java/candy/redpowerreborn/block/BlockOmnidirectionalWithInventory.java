@@ -56,8 +56,8 @@ public class BlockOmnidirectionalWithInventory extends BlockContainer
         TileEntity tileentity = worldIn.getTileEntity(pos);
         keepInventory = true;
 
-        worldIn.setBlockState(pos, RedPowerBlocks.alloy_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(ON, active), 3);
-        worldIn.setBlockState(pos, RedPowerBlocks.alloy_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(ON, active), 3);
+        worldIn.setBlockState(pos, RedPowerBlocks.ALLOY_FURNACE.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(ON, active), 3);
+        worldIn.setBlockState(pos, RedPowerBlocks.ALLOY_FURNACE.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(ON, active), 3);
 
         keepInventory = false;
 

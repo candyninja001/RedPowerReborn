@@ -40,8 +40,8 @@ public class RedPowerBiomeDecorationHandler {
 						int z1 = z + event.getRand().nextInt(dist * 2) - dist;
 						BlockPos pos1 = new BlockPos(x1, y1, z1);
 
-						if(event.getWorld().isAirBlock(pos1) && (!event.getWorld().provider.getHasNoSky() || y1 < 127) && ((BlockIndigoFlower)RedPowerBlocks.indigo_flower).canBlockStay(event.getWorld(), pos1, event.getWorld().getBlockState(pos1))){//.canBlockStay(event.getWorld(), x1, y1, z1)) {
-							event.getWorld().setBlockState(pos1, RedPowerBlocks.indigo_flower.getDefaultState(), 2);//2 might not be correct
+						if(event.getWorld().isAirBlock(pos1) && (!event.getWorld().provider.getHasNoSky() || y1 < 127) && ((BlockIndigoFlower)RedPowerBlocks.INDIGO_FLOWER).canBlockStay(event.getWorld(), pos1, event.getWorld().getBlockState(pos1))){//.canBlockStay(event.getWorld(), x1, y1, z1)) {
+							event.getWorld().setBlockState(pos1, RedPowerBlocks.INDIGO_FLOWER.getDefaultState(), 2);//2 might not be correct
 						}
 					}
 				}

@@ -9,7 +9,7 @@ public class FuelHandler implements IFuelHandler {
 
 	@Override
 	public int getBurnTime(ItemStack fuel) {
-		if(fuel.getItem() == Item.getItemFromBlock(RedPowerBlocks.rubber_log))
+		if(fuel.getItem() == Item.getItemFromBlock(RedPowerBlocks.RUBBER_LOG))
 			return 300;
 		return 0;
 	}
