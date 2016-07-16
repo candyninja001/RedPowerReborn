@@ -121,7 +121,7 @@ public class RedPowerBlocks {
 		GameRegistry.registerBlock(emerald_ore, "emerald_ore");
 		filter = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_filter").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(filter, "filter");
-		flax = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_flax").setCreativeTab(RedPower.tabRedPower);
+		flax = new BlockFlax().setUnlocalizedName(RedPower.MODID + "_flax");
 		GameRegistry.registerBlock(flax, "flax");
 		fluid_pipe = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_fluidPipe").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(fluid_pipe, "fluid_pipe");

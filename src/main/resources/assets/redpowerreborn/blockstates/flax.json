@@ -1,5 +1,13 @@
 {
-	"variants": {
-		"normal": { "model": "redpowerreborn:flax" }
-	}
+    "variants": {
+        "age=0,half=lower": { "model": "redpowerreborn:flax_bottom_stage0" },
+        "age=1,half=lower": { "model": "redpowerreborn:flax_bottom_stage0" },
+        "age=2,half=lower": { "model": "redpowerreborn:flax_bottom_stage1" },
+        "age=3,half=lower": { "model": "redpowerreborn:flax_bottom_stage1" },
+        "age=4,half=lower": { "model": "redpowerreborn:flax_bottom_stage2" },
+        "age=5,half=lower": { "model": "redpowerreborn:flax_bottom_stage3" },
+        "age=6,half=lower": { "model": "redpowerreborn:flax_bottom_stage3" },
+        "age=7,half=lower": { "model": "redpowerreborn:flax_bottom_stage4" },
+        "age=7,half=upper": { "model": "redpowerreborn:flax_top_stage4" }
+    }
 }

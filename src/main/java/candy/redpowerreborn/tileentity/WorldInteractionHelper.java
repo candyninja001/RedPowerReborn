@@ -68,6 +68,7 @@ public class WorldInteractionHelper {
 	        entityitem.motionX = motionX;
 	        entityitem.motionY = motionY;
 	        entityitem.motionZ = motionZ;
+	        entityitem.setDefaultPickupDelay();
 	        worldObj.spawnEntityInWorld(entityitem);
 		}
 		return stack;
