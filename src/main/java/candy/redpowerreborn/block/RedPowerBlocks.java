@@ -147,7 +147,7 @@ public class RedPowerBlocks {
 		GameRegistry.registerBlock(MARBLE_BRICK, "marble_brick");
 		NIKOLITE_ORE = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_oreNickolite").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(NIKOLITE_ORE, "nickolite_ore");
-		PNEUMATIC_TUBE = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_pnuematicTube").setCreativeTab(RedPower.tabRedPower);
+		PNEUMATIC_TUBE = new BlockPneumaticTube(Material.IRON).setUnlocalizedName(RedPower.MODID + "_pnuematicTube").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(PNEUMATIC_TUBE, "pnuematic_tube");
 		PROJECT_TABLE = new BlockProjectTable().setUnlocalizedName(RedPower.MODID + "_projectTable").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(PROJECT_TABLE, "project_table");
@@ -239,7 +239,7 @@ public class RedPowerBlocks {
 			renderItem.getItemModelMesher().register(Item.getItemFromBlock(MARBLE), 0, new ModelResourceLocation(RedPower.MODID + ":marble", "inventory"));
 			renderItem.getItemModelMesher().register(Item.getItemFromBlock(MARBLE_BRICK), 0, new ModelResourceLocation(RedPower.MODID + ":marble_brick", "inventory"));
 			renderItem.getItemModelMesher().register(Item.getItemFromBlock(NIKOLITE_ORE), 0, new ModelResourceLocation(RedPower.MODID + ":nickolite_ore", "inventory"));
-			renderItem.getItemModelMesher().register(Item.getItemFromBlock(PNEUMATIC_TUBE), 0, new ModelResourceLocation(RedPower.MODID + ":pnuematic_tube", "inventory"));
+			renderItem.getItemModelMesher().register(Item.getItemFromBlock(PNEUMATIC_TUBE), 0, new ModelResourceLocation(RedPower.MODID + ":pneumatic_tube", "inventory"));
 			renderItem.getItemModelMesher().register(Item.getItemFromBlock(PROJECT_TABLE), 0, new ModelResourceLocation(RedPower.MODID + ":project_table", "inventory"));
 			renderItem.getItemModelMesher().register(Item.getItemFromBlock(PUMP), 0, new ModelResourceLocation(RedPower.MODID + ":pump", "inventory"));
 			renderItem.getItemModelMesher().register(Item.getItemFromBlock(REDSTONE_TUBE), 0, new ModelResourceLocation(RedPower.MODID + ":redstone_tube", "inventory"));
