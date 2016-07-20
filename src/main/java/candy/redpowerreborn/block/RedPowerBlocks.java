@@ -147,7 +147,7 @@ public class RedPowerBlocks {
 		GameRegistry.registerBlock(MARBLE_BRICK, "marble_brick");
 		NIKOLITE_ORE = new Block(Material.ROCK).setUnlocalizedName(RedPower.MODID + "_oreNickolite").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(NIKOLITE_ORE, "nickolite_ore");
-		PNEUMATIC_TUBE = new BlockPneumaticTube(Material.IRON).setUnlocalizedName(RedPower.MODID + "_pnuematicTube").setCreativeTab(RedPower.tabRedPower);
+		PNEUMATIC_TUBE = new BlockPneumaticTube(Material.IRON).setUnlocalizedName(RedPower.MODID + "_pneumaticTube").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(PNEUMATIC_TUBE, "pnuematic_tube");
 		PROJECT_TABLE = new BlockProjectTable().setUnlocalizedName(RedPower.MODID + "_projectTable").setCreativeTab(RedPower.tabRedPower);
 		GameRegistry.registerBlock(PROJECT_TABLE, "project_table");

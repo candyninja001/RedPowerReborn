@@ -1,5 +1,5 @@
 {
-	"parent": "redpowerreborn:block/pnuematic_tube",
+	"parent": "redpowerreborn:block/pneumatic_tube_straight",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],
