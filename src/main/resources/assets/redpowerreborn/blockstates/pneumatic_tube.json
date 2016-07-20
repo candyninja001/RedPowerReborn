@@ -1,0 +1,85 @@
+{
+    "multipart": [
+		{   "when": { "up": "true", "down": "true", "north": "false", "east": "false", "south": "false", "west": "false" },
+            "apply": { "model": "redpowerreborn:pneumatic_tube_straight" }
+        },
+		{   "when": { "up": "false", "down": "false", "north": "true", "east": "false", "south": "true", "west": "false" },
+            "apply": { "model": "redpowerreborn:pneumatic_tube_straight", "x": 90}
+        },
+		{   "when": { "up": "false", "down": "false", "north": "false", "east": "true", "south": "false", "west": "true" },
+            "apply": { "model": "redpowerreborn:pneumatic_tube_straight", "x": 90, "y": 90 }
+        },
+		{   "when": { "AND": [
+				{"up": "true"},
+				{"OR": [
+					{"down": "false"}, 
+					{"north": "true"}, 
+					{"east": "true"}, 
+					{"south": "true"}, 
+					{"west": "true"}
+				] },
+			}
+            "apply": { "model": "redpowerreborn:pneumatic_tube_extension", "x": 270 }
+        },
+		{   "when": { "AND": [
+				{"down": "true"},
+				{"OR": [
+					{"up": "false"}, 
+					{"north": "true"}, 
+					{"east": "true"}, 
+					{"south": "true"}, 
+					{"west": "true"}
+				] },
+			}
+            "apply": { "model": "redpowerreborn:pneumatic_tube_extension", "x": 90 }
+        },
+		{   "when": { "AND": [
+				{"north": "true"},
+				{"OR": [
+					{"up": "true"},
+					{"down": "true"},  
+					{"east": "true"}, 
+					{"south": "false"}, 
+					{"west": "true"}
+				] },
+			}
+            "apply": { "model": "redpowerreborn:pneumatic_tube_extension" }
+        },
+		{   "when": { "AND": [
+				{"east": "true"},
+				{"OR": [
+					{"up": "true"},
+					{"down": "true"}, 
+					{"north": "true"},  
+					{"south": "true"}, 
+					{"west": "false"}
+				] },
+			}
+            "apply": { "model": "redpowerreborn:pneumatic_tube_extension", "y": 90 }
+        },
+		{   "when": { "AND": [
+				{"south": "true"},
+				{"OR": [
+					{"up": "true"},
+					{"down": "true"}, 
+					{"north": "false"}, 
+					{"east": "true"}, 
+					{"west": "true"}
+				] },
+			}
+            "apply": { "model": "redpowerreborn:pneumatic_tube_extension", "y": 180 }
+        },
+		{   "when": { "AND": [
+				{"west": "true"},
+				{"OR": [
+					{"up": "true"},
+					{"down": "true"}, 
+					{"north": "true"}, 
+					{"east": "false"}, 
+					{"south": "true"}
+				] },
+			}
+            "apply": { "model": "redpowerreborn:pneumatic_tube_extension", "y": 270 }
+        }
+    ]
+}

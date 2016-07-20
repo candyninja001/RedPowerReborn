@@ -1,6 +1,6 @@
 {
 	"parent": "block/cube_all",
 	"textures": {
-		"all": "redpowerreborn:blocks/pnuematic_tube"
+		"all": "redpowerreborn:blocks/sapphire_block"
 	}
 }

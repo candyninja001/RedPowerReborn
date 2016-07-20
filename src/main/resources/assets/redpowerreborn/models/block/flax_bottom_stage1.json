@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "blocks/redpowerreborn:flax_0"
+        "crop": "redpowerreborn:blocks/flax_1"
     }
 }

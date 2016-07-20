@@ -1,5 +1,5 @@
 {
-	"parent": "redpowerreborn:block/copper",
+	"parent": "redpowerreborn:block/emerald_block",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

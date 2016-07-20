@@ -1,0 +1,17 @@
+{
+    "textures": {
+        "particle": "#tubeextension"
+    },
+    "elements": [
+        {   "from": [ 4, 0, 4 ],
+            "to": [ 12, 16, 12 ],
+            "faces": {
+                "north": { "texture": "#tubeextension" },
+                "south": { "texture": "#tubeextension" },
+                "west":  { "texture": "#tubeextension" },
+                "east":  { "texture": "#tubeextension" }
+            },
+            "__comment": "Tube straight"
+        }
+    ]
+}

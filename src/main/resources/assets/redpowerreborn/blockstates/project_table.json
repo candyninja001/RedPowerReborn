@@ -1,8 +1,8 @@
 {
     "variants": {
-        "facing=north": { "model": "redpowerreborn:marble” },
-        "facing=south": { "model": "redpowerreborn:marble", "y": 180 },
-        "facing=west":  { "model": "redpowerreborn:alloy_furnace_off", "y": 270 },
-        "facing=east":  { "model": "redpowerreborn:alloy_furnace_off", "y": 90 }
+        "facing=north": { "model": "redpowerreborn:project_table”, "uvlock": true },
+        "facing=south": { "model": "redpowerreborn:project_table", "y": 180, "uvlock": true },
+        "facing=west":  { "model": "redpowerreborn:project_table", "y": 270, "uvlock": true },
+        "facing=east":  { "model": "redpowerreborn:project_table", "y": 90, "uvlock": true }
     }
 }

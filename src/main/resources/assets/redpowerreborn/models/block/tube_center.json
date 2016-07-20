@@ -1,0 +1,19 @@
+{
+    "textures": {
+        "particle": "#tubecenter"
+    },
+    "elements": [
+        {   "from": [ 4, 4, 4 ],
+            "to": [ 12, 12, 12 ],
+            "faces": {
+                "down":  { "texture": "#tubecenter" },
+                "up":    { "texture": "#tubecenter" },
+                "north": { "texture": "#tubecenter" },
+                "south": { "texture": "#tubecenter" },
+                "west":  { "texture": "#tubecenter" },
+                "east":  { "texture": "#tubecenter" }
+            },
+            "__comment": "Tube center"
+        }
+    ]
+}

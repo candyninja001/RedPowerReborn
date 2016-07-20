@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "redpowerreborn:items/red_doped_wafer"
+        "layer0": "redpowerreborn:items/red_silicon_wafer"
     },	
     "display": {	
         "thirdperson": {	

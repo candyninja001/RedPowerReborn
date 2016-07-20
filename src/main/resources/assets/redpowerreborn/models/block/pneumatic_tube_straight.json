@@ -1,0 +1,6 @@
+{
+    "parent": "redpowerreborn:block/tube_straight",
+    "textures": {
+        "tubeextension": "redpowerreborn:blocks/pneumatic_tube_straight"
+    }
+}

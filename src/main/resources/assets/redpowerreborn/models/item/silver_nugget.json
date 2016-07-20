@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "redpowerreborn:items/wooden_sickle"
+        "layer0": "redpowerreborn:items/silver_nugget"
     },	
     "display": {	
         "thirdperson": {	

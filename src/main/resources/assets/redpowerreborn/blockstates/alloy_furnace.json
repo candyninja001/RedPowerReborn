@@ -4,9 +4,9 @@
         "facing=south,lit=false": { "model": "redpowerreborn:alloy_furnace_off", "y": 180, "uvlock": true },
         "facing=west,lit=false":  { "model": "redpowerreborn:alloy_furnace_off", "y": 270, "uvlock": true },
         "facing=east,lit=false":  { "model": "redpowerreborn:alloy_furnace_off", "y": 90, "uvlock": true },
-		"facing=north,lit=true": { "model": "redpowerreborn:alloy_furnace_on" },
-        "facing=south,lit=true": { "model": "redpowerreborn:alloy_furnace_on", "y": 180 },
-        "facing=west,lit=true":  { "model": "redpowerreborn:alloy_furnace_on", "y": 270 },
-        "facing=east,lit=true":  { "model": "redpowerreborn:alloy_furnace_on", "y": 90 }
+		"facing=north,lit=true": { "model": "redpowerreborn:alloy_furnace_on", "uvlock": true },
+        "facing=south,lit=true": { "model": "redpowerreborn:alloy_furnace_on", "y": 180, "uvlock": true },
+        "facing=west,lit=true":  { "model": "redpowerreborn:alloy_furnace_on", "y": 270, "uvlock": true },
+        "facing=east,lit=true":  { "model": "redpowerreborn:alloy_furnace_on", "y": 90, "uvlock": true }
     }
 }
